@@ -1,0 +1,27 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "hardhat.telemetry": true,
+  "workbench.colorTheme": "Default Dark+ Experimental",
+  "d.dubCompiler": "dmd.EXE",
+  "d.stdlibPath": "auto",
+  "d.dubPath": "C:\\D\\dmd2\\windows\\bin64\\dub.exe",
+  "editor.formatOnSave": true,
+  "svelte.enable-ts-plugin": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": true,
+  "extensions.ignoreRecommendations": true
+}

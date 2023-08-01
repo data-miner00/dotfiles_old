@@ -95,7 +95,7 @@ nnoremap <space> :
 
 " Center cursor vertically when searching through words
 nnoremap n nzz
-nnoremap n Nzz
+nnoremap N Nzz
 
 " Yank from cursor to the end of line
 nnoremap Y y$

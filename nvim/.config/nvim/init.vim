@@ -41,3 +41,7 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
+autocmd VimEnter *
+  \   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|    PlugInstall --sync | q
+  \|  endif
