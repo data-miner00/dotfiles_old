@@ -133,6 +133,10 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Vimrc file bindings
+map <Leader>E :e $MYVIMRC<CR>
+map <Leader>S :source $MYVIMRC<CR>
+
 " NERDTree specific mappings
 " F3 to toggle NerdTree
 nnoremap <f3> :NERDTreeToggle<cr>
