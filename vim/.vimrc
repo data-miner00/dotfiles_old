@@ -137,6 +137,16 @@ inoremap {;<CR> {<CR>};<ESC>O<Tab>
 map <Leader>E :e $MYVIMRC<CR>
 map <Leader>S :source $MYVIMRC<CR>
 
+" Line wrap movements
+nnoremap k gk
+nnoremap j gj
+
+" Tab indenting
+nnoremap <tab> >>
+nnoremap <s-tab> <<
+xnoremap <tab> >gv
+xnoremap <s-tab> <gv
+
 " NERDTree specific mappings
 " F3 to toggle NerdTree
 nnoremap <f3> :NERDTreeToggle<cr>
