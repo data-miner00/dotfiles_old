@@ -122,6 +122,17 @@ nnoremap <c-down> <c-w>-
 nnoremap <c-left> <c-w>>
 nnoremap <c-right> <c-w><
 
+" Autoclosing
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap (<CR> (<CR>)<ESC>O
+inoremap [ []<left>
+inoremap [<CR> [<CR>]<ESC>O
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " NERDTree specific mappings
 " F3 to toggle NerdTree
 nnoremap <f3> :NERDTreeToggle<cr>
