@@ -74,6 +74,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'whatyouhide/vim-gotham'
     Plug 'preservim/nerdtree'
+    Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -103,17 +104,17 @@ nnoremap Y y$
 " Run python3 file with F5
 nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
 
-" Split window or navigating window
-" Split bottom
+" Navigating window
+" Switch to bottom window
 nnoremap <c-j> <c-w>j
 
-" Split top
+" Switch to top window
 nnoremap <c-k> <c-w>k
 
-" Split left
+" Switch to left window
 nnoremap <c-h> <c-w>h
 
-" Split right
+" Switch to right window
 nnoremap <c-l> <c-w>l
 
 " Resize window using arrow keys
