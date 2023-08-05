@@ -126,12 +126,12 @@ nnoremap <c-right> <c-w><
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
-inoremap (<CR> (<CR>)<ESC>O
+inoremap (<CR> (<CR>)<ESC>O<Tab>
 inoremap [ []<left>
-inoremap [<CR> [<CR>]<ESC>O
+inoremap [<CR> [<CR>]<ESC>O<Tab>
 inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+inoremap {<CR> {<CR>}<ESC>O<Tab>
+inoremap {;<CR> {<CR>};<ESC>O<Tab>
 
 " Vimrc file bindings
 map <Leader>E :e $MYVIMRC<CR>
