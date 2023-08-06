@@ -16,3 +16,7 @@ nnoremap <tab> >>
 nnoremap <s-tab> <<
 xnoremap <tab> >gv
 xnoremap <s-tab> <gv
+
+" Clipboard
+nnoremap "p "+p
+vnoremap "y "+y
