@@ -20,3 +20,9 @@ xnoremap <s-tab> <gv
 " Clipboard
 nnoremap "p "+p
 vnoremap "y "+y
+
+" Window movement
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l

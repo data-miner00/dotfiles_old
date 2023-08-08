@@ -1,3 +1,6 @@
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
 " Enable file type detection
 filetype on
 
@@ -12,6 +15,9 @@ syntax on
 
 " Set line number
 set number
+
+" Show cursor position
+set ruler
 
 " Set relative number
 set relativenumber
@@ -67,6 +73,21 @@ set hlsearch
 " Set the command to save in history (default=20)
 set history=40
 
+" Intuitive backspacing
+set backspace=indent,eol,start
+
+" Menu for file paths when `:e` or `:b`
+set wildmenu
+
+" Don't update screen during macro and script execution
+set lazyredraw
+
+" Disable beep when error
+set noerrorbells
+
+" Flash the screen on error
+" set visualbell
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
@@ -75,6 +96,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'whatyouhide/vim-gotham'
     Plug 'preservim/nerdtree'
     Plug 'tpope/vim-surround'
+    Plug 'jlanzarotta/bufexplorer'
 
 call plug#end()
 
@@ -142,11 +164,31 @@ map <Leader>S :source $MYVIMRC<CR>
 nnoremap k gk
 nnoremap j gj
 
+" Select whole paragraph
+nnoremap <space><space> vip
+
 " Tab indenting
 nnoremap <tab> >>
 nnoremap <s-tab> <<
 xnoremap <tab> >gv
 xnoremap <s-tab> <gv
+
+" Tab mappings
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit<cr>
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+nnoremap <s-h> gT
+nnoremap <s-l> gt
+
+" Casing
+map! <leader>f <esc>gUiw']a
+map! <leader>ff <esc>guiw']a
 
 " NERDTree specific mappings
 " F3 to toggle NerdTree
@@ -154,6 +196,9 @@ nnoremap <f3> :NERDTreeToggle<cr>
 
 " Nerdtree ignore files and directories
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+
+" Bufexplorer show relative path instead of absolute path
+" let g:bufExplorerShowRelativePath=1
 
 " }}}
 
@@ -182,6 +227,11 @@ if version >= 703
     set undofile
     set undoreload=1000
 endif
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|     PlugInstall --sync | q
+  \| endif
 
 " }}}
 
