@@ -1,3 +1,5 @@
+" NVIM v0.4.3
+
 :set number
 :set relativenumber
 :set autoindent

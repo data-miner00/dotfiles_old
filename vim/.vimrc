@@ -190,6 +190,10 @@ nnoremap <s-l> gt
 map! <leader>f <esc>gUiw']a
 map! <leader>ff <esc>guiw']a
 
+" Abbreviations
+iab fn function
+ab teh the
+
 " NERDTree specific mappings
 " F3 to toggle NerdTree
 nnoremap <f3> :NERDTreeToggle<cr>
@@ -220,6 +224,10 @@ augroup END
 
 " Set indentation 2 spaces for HTML
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
+
+" Automatic fold settings for specific files
+autocmd FileType ruby setlocal foldmethod=syntax
+autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " Enable undofile after save for vim 7.3+
 if version >= 703
