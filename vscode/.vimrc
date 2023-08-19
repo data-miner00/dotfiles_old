@@ -17,9 +17,12 @@ nnoremap <s-tab> <<
 xnoremap <tab> >gv
 xnoremap <s-tab> <gv
 
+" Highlight all
+nnoremap <leader>a ggVG
+
 " Clipboard
-nnoremap "p "+p
-vnoremap "y "+y
+noremap <leader>p "+p
+noremap <leader>y "+y
 
 " Window movement
 nnoremap <c-j> <c-w>j
