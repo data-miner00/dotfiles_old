@@ -18,7 +18,17 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/playground'
+  }
+  use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets'
+  }
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -29,6 +39,7 @@ return require('packer').startup(function(use)
     tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use 'tpope/vim-surround'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
