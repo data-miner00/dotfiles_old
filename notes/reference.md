@@ -15,7 +15,15 @@
 ## Neovim
 
 - [Neovim Installation Guide - GitHub Wiki](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+- [lua-guide](https://neovim.io/doc/user/lua-guide.html)
+- [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide)
 
 ### Video Tutorials
 
 - [How to Configure Neovim to make it Amazing -- complete tutorial](https://www.youtube.com/watch?v=J9yqSdvAKXY)
+- [0 to LSP : Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
+- [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s)
+
+## Others
+
+- [Mason Lsp Registry](https://mason-registry.dev/registry/list)
