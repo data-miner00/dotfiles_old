@@ -12,7 +12,7 @@ local on_attach = function(_, _)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers = { 'lua_ls', 'hls' }
+local servers = { 'lua_ls', 'hls', 'rust_analyzer', 'pyright' }
 
 for _, lsp in ipairs(servers) do
   require('lspconfig')[lsp].setup {
