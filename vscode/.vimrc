@@ -29,3 +29,17 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Quit, write, cut
+nnoremap <leader>w :w!<cr>
+nnoremap <leader>qq :q!<cr>
+nnoremap <leader>x :x!<cr>
+
+" Editor
+nnoremap K editor.action.showHover
+nnoremap [d editor.action.marker.prev
+nnoremap ]d editor.action.quickFix
+
+" Line edge
+nnoremap H ^
+nnoremap L $
