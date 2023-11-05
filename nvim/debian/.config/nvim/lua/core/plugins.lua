@@ -45,7 +45,10 @@ return require('packer').startup(function(use)
     'rmagatti/alternate-toggler',
     -- event = { "BufReadPost" }, For some reason, optional pkg can't load on start
   }
-
+  use {
+    'glepnir/dashboard-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
