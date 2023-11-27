@@ -115,8 +115,24 @@ fi
 [ -f "/home/mumk/.ghcup/env" ] && source "/home/mumk/.ghcup/env" # ghcup-env
 . "$HOME/.cargo/env"
 
-mkcd()
-{
+# Custom commands
+function mkcd() {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
+}
+
+function countdown() {
+    target=$((`date +%s` + $1))
+    while [ "$target" -ge `date +%s`]; do
+        echo -ne "$(date -u --date @$(($target - `date +%s`)) +%H:%M:%S)\r"
+        sleep 0.1
+    done
+}
+
+function stopwatch() {
+    started_at=`date +%s`
+    while true; do
+        echo -ne "$(date -u --date @$((`date +%s` - $started_at)) +%H:%M:%S)\r"
+        sleep 0.1
+    done
 }

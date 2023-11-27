@@ -20,7 +20,12 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
-    'nvim-treesitter/playground'
+    'nvim-treesitter/playground',
+    -- run = ':TSUpdate'
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
   use {
     'hrsh7th/nvim-cmp',
@@ -46,7 +51,7 @@ return require('packer').startup(function(use)
     -- event = { "BufReadPost" }, For some reason, optional pkg can't load on start
   }
   use {
-    'glepnir/dashboard-nvim',
+    'nvimdev/dashboard-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' }
   }
   -- Automatically set up your configuration after cloning packer.nvim
