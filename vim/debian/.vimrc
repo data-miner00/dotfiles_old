@@ -52,4 +52,11 @@ function! ToggleNetrw()
     endif
 endfunction
 
+" Close Netrw if it's the only buffer open
+autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
+
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * :call ToggleNetrw()
+augroup END
 noremap <c-b> <esc>:Lex<cr>:vertical resize 30<cr>

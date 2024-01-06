@@ -1,0 +1,21 @@
+- https://github.com/vimjoyer/nvim-video/tree/main
+- https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/
+- [Christian's Dotfiles](https://github.com/ChristianLempa/dotfiles/tree/main)
+- [NixOS](https://nixos.org/download)
+- [Effective Go](https://go.dev/doc/effective_go)
+- [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests/)
+- [Starship](https://starship.rs/)
+- [5 fun & geeky things you can do on telnet](https://www.digitalcitizen.life/5-fun-geeky-things-you-can-do-telnet-client/)
+- [DOSBOX-X](https://dosbox-x.com/)
+- [cool retro term](https://github.com/Swordfish90/cool-retro-term)
+- [Eric Murphy's Dotfiles](https://github.com/ericmurphyxyz/dotfiles/tree/master)
+- [Install Tmux](https://github.com/tmux/tmux/wiki/Installing)
+- [cpow-dotfiles](https://github.com/cpow/cpow-dotfiles)
+- https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/
+- https://gitlab.com/screenkey/screenkey
+- [tmux man page](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+- [distrowatch](https://distrowatch.com/)
+- https://cwe.mitre.org/
+- https://docs.architectury.dev/api/creative_tabs
+- https://github.com/adibhanna/nvim
+- https://github.com/adibhanna/lvim-config
