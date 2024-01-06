@@ -31,6 +31,7 @@ function createTmuxConfig () {
     echo "bind-key l select-pane -R" >> ~/$TMUX_CONFIG
     echo "" >> ~/$TMUX_CONFIG
     echo "# List of plugins here" >> ~/$TMUX_CONFIG
+    echo "set -g @plugin 'tmux-plugins/tpm'" >> ~/$TMUX_CONFIG
     echo "" >> ~/$TMUX_CONFIG
     echo "" >> ~/$TMUX_CONFIG
     echo "# Init tmux plugin manager (keep this at bottom)" >> ~/$TMUX_CONFIG
