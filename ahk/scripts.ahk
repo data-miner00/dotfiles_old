@@ -7,11 +7,20 @@
 ; Expand acronyms
 ::rpa::Robotic Process Automation
 
-; Run notepad
-^3::Run "notepad"
+; Run notepad if not open
+#n::
+{
+	if WinExist("ahk_class Notepad")
+		WinActivate
+	else
+		Run "notepad"
+}
 
 ; Run cmd
-^q::Run A_ComSpec
+<^q::Run A_ComSpec
+
+; Run cmd at C:\
+>^q::Run "cmd", "C:\"
 
 ; Open user documents folder
 ^2::Run A_MyDocuments
