@@ -88,6 +88,13 @@ set noerrorbells
 " Flash the screen on error
 " set visualbell
 
+" Spellchecks
+set spelllang=en_us
+set spell
+
+" Add empty line
+nnoremap # o<ESC>k
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')

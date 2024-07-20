@@ -6,6 +6,9 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:newrw_winsize = 20
 
+" Add empty line
+nnoremap # o<ESC>k
+
 function! OpenToRight()
     :normal v
     let g:path=expand('%:p')
@@ -59,4 +62,26 @@ augroup ProjectDrawer
     autocmd!
     autocmd VimEnter * :call ToggleNetrw()
 augroup END
+
 noremap <c-b> <esc>:Lex<cr>:vertical resize 30<cr>
+
+function! ToggleComment()
+    execute "normal ^"
+    if '//' == strpart(getline("."), col(".")-1, 2)
+        execute "normal xx"
+    else
+        execute "normal 0i//"
+    endif
+endfunction
+
+map <C-_> :call ToggleComment()<cr>
+
+fu! ToggleCursorColumn ()
+    if &cursorcolumn
+        set nocursorcolumn
+    else
+        set cursorcolumn
+    endif
+endfunction
+
+map <C-i> :call ToggleCursorColumn()<cr>
