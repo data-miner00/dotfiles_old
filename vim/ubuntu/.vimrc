@@ -201,6 +201,12 @@ map! <leader>ff <esc>guiw']a
 iab fn function
 ab teh the
 
+" Disable arrow keys
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+
 " NERDTree specific mappings
 " F3 to toggle NerdTree
 nnoremap <f3> :NERDTreeToggle<cr>
