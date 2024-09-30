@@ -1,8 +1,9 @@
-neofetch.cmd
-
-Write-Host "Howdy folks!"
 $DOTFILES="D:\Workspace\dotfiles"
 $PSModuleFolder="$DOTFILES\.config\pwsh\modules"
+
+neofetch --ascii $DOTFILES\.config\neofetch\ascii\windows_small.txt
+
+Write-Host "Howdy folks!"
 
 <#
 .SYNOPSIS
