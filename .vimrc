@@ -1,4 +1,5 @@
 " Key mappings for VSCode Vim Extension
+let mapleader = " "
 
 inoremap jj <esc>
 nnoremap Y y$
