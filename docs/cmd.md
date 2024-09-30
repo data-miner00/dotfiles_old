@@ -25,6 +25,7 @@ Some quick and dirty cmds that can be useful
 23. <C-n> autocomplete
 24. zM - on fold
 25. zR - off fold
+26. :echo stdpath('config')
 
 Very Magic \v Similar to PRP
 Magic \m The default but awkward
