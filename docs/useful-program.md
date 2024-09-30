@@ -1,0 +1,41 @@
+# List of useful programs on Windows and WSL
+
+- [ ] Powershell
+- [ ] Command Prompt
+- [ ] Neovim
+- [ ] Emacs
+- [ ] Chocolatey
+- [ ] Scoop
+- [ ] Node.js
+- [ ] Python
+- [ ] Zig
+- [ ] Visual Studio
+- [ ] Visual Studio Code
+- [ ] Oracle Virtualbox
+- [ ] Balena Etcher
+- [ ] AutoHotKey
+- [ ] draw.io
+- [ ] Figma
+- [ ] SQL Server
+- [ ] RabbitMQ
+- [ ] Grafana
+- [ ] Firefox
+- [ ] Spotify
+- [ ] XAMPP
+- [ ] WAMP
+- [ ] Minecraft
+- [ ] Java
+- [ ] Docker Desktop
+- [ ] Git
+- [ ] Elixir
+- [ ] Elixir Livebook
+- [ ] Notepad++
+- [ ] RustRover
+- [ ] IntelliJ
+- [ ] ILSpy
+- [ ] LINQ Pad
+- [ ] Obsidian
+- [ ] MobaXTerm
+- [ ] Postman
+- [ ] DB Browser for SQLite
+- [ ] TeamViewer
