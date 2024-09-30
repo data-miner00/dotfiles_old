@@ -19,3 +19,13 @@
 - https://docs.architectury.dev/api/creative_tabs
 - https://github.com/adibhanna/nvim
 - https://github.com/adibhanna/lvim-config
+- https://code.visualstudio.com/docs
+- https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+- https://starship.rs/
+- [USERS, GROUPS, AND PERMISSIONS IN LINUX](https://medium.com/@jasurbek.go.dev/users-groups-and-permissions-in-linux-1fa6d56b744a)
+- shared memfd open() failed
+- https://developerday.com/?iss=https%3A%2F%2Fexperience.okta.com%2F
+- https://github.com/nanotee/nvim-lua-guide
+- https://eloquentjavascript.net/00_intro.html
+- https://coffeeaddict.dev/my-working-setup/
+- https://stackoverflow.com/questions/79037316/add-numbering-to-repeated-values-in-csv-string
