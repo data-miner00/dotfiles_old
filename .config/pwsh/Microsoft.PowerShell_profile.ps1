@@ -12,6 +12,7 @@ Import-Module -Name $PSModuleFolder\Search-Google.psm1
 Import-Module -Name $PSModuleFolder\Show-Calendar.psm1
 Import-Module -Name $PSModuleFolder\Push-GitTag.psm1
 Import-Module -Name $PSModuleFolder\Get-EnvironmentVariables.psm1
+Import-Module -Name $PSModuleFolder\Prune-LocalBranch.psm1 -DisableNameChecking
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
