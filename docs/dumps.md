@@ -29,3 +29,4 @@
 - https://eloquentjavascript.net/00_intro.html
 - https://coffeeaddict.dev/my-working-setup/
 - https://stackoverflow.com/questions/79037316/add-numbering-to-repeated-values-in-csv-string
+- https://learn.microsoft.com/en-us/windows/terminal/panes
