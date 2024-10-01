@@ -35,3 +35,5 @@ Contains a collection of error objects from the most recent command.
 
 1. `$null`
 Represents a null value, useful for suppressing output or checking for null.
+
+Use `Get-Variables` to get all PowerShell variables
