@@ -39,3 +39,6 @@
 - [ ] Postman
 - [ ] DB Browser for SQLite
 - [ ] TeamViewer
+- [ ] Windows Terminal
+- [ ] Thunderbird
+- [ ] Android Studio
