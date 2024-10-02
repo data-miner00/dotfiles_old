@@ -30,3 +30,6 @@
 - https://coffeeaddict.dev/my-working-setup/
 - https://stackoverflow.com/questions/79037316/add-numbering-to-repeated-values-in-csv-string
 - https://learn.microsoft.com/en-us/windows/terminal/panes
+- gnu-free-fonts noto-fonts ttf-jetbrains-mono
+- https://www.nerdfonts.com/
+- https://www.youtube.com/watch?v=AK2JE2YsKto

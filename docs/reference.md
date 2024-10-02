@@ -27,3 +27,12 @@
 ## Others
 
 - [Mason Lsp Registry](https://mason-registry.dev/registry/list)
+
+## Emacs
+
+- [Emacs Basics](https://mally.stanford.edu/~sr/computing/emacs.html)
+- [Melpa](https://melpa.org/#/)
+- [r/emacs](https://www.reddit.com/r/emacs/)
+- [elpaca](https://github.com/progfolio/elpaca)
+- [Org Mode](https://orgmode.org/)
+- [Configuring Emacs on My New Laptop](https://www.youtube.com/watch?v=81MdyDYqB-A)
