@@ -6,6 +6,7 @@
 (menu-bar-mode -1)                      ; Disable menu bar
 (column-number-mode 1)
 (show-paren-mode 1)
+(global-whitespace-mode)                ; whitespace-mode is for local buffers only
 
 (global-display-line-numbers-mode 1)    ; Enable line numbers
 
@@ -15,7 +16,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(tango)))
+ '(custom-enabled-themes '(tango))
+ '(display-line-numbers-type 'relative))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,3 +35,30 @@
 
 (defun hello()
   (message "hello, world"))
+
+(defun get-default-font ()
+  (cond
+    ((eq system-type 'windows-nt) "Cascadia Code-16")
+    ((eq system-type 'gnu/linux) "Iosevka-20")))
+
+(add-to-list 'default-frame-alist `(font . ,(get-default-font)))
+
+(set-face-attribute 'default nil
+                    :family (get-default-font) :height 100)
+
+; Set default directory for `load-file`
+(setq default-directory "D:/Workspace")
+
+; Set new home directory variable
+(setq home-directory  "C:/Users/User")
+
+; Load individual file with absolute path
+(load-file "~/.emacs.d/add.el")
+
+; Add load path to search for Elisp module
+(add-to-list 'load-path
+  (concat home-directory "/.emacs.local"))
+
+; Require modules
+(require 'add)
+(require 'greet)

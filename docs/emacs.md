@@ -10,3 +10,4 @@
 emacs -nw
 <M-x> describe-font
 <M-x> version
+~ in Windows resolves to C:/Users/User/AppData/Roaming unfortunately
