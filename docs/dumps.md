@@ -33,3 +33,4 @@
 - gnu-free-fonts noto-fonts ttf-jetbrains-mono
 - https://www.nerdfonts.com/
 - https://www.youtube.com/watch?v=AK2JE2YsKto
+- https://stackoverflow.com/questions/5436563/setting-emacs-font-under-windows
