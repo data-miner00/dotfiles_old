@@ -62,3 +62,6 @@
 ; Require modules
 (require 'add)
 (require 'greet)
+
+(require 'cc)
+(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . cc))
