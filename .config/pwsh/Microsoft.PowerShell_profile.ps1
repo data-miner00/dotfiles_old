@@ -1,4 +1,5 @@
-$DOTFILES="D:\Workspace\dotfiles"
+$DDrive="D:"
+$DOTFILES="$DDrive\Workspace\dotfiles"
 $PSModuleFolder="$DOTFILES\.config\pwsh\modules"
 
 neofetch --ascii $DOTFILES\.config\neofetch\ascii\windows_small.txt
@@ -19,7 +20,12 @@ Set-Alias -Name np -Value notepad.exe
 Set-Alias -Name exp -Value explorer.exe
 Set-Alias -Name google -Value Search-Google
 Set-Alias -Name env -Value Get-EnvironmentVariables
+Set-Alias -Name goto -Value Switch-Location
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
+}
+
+function ip {
+    Invoke-WebRequest ifconfig.me | Select-Object -Property Content
 }
