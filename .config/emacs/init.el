@@ -1,5 +1,9 @@
 (setq inhibit-startup-message t         ; Don't show the splash screen
-      visible-bell t)                   ; Flash when the bell rings
+      visible-bell (equal system-type 'windows-nt)
+      tab-width 4
+      indent-tabs-mode nil
+      compilation-scroll-output t
+      make-backup-files nil)
 
 (tool-bar-mode -1)                      ; Disable toolbar
 (scroll-bar-mode -1)                    ; Disable scrollbar
@@ -7,6 +11,8 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (global-whitespace-mode)                ; whitespace-mode is for local buffers only
+(ido-mode 1)
+(ido-everywhere 1)
 
 (global-display-line-numbers-mode 1)    ; Enable line numbers
 
@@ -42,6 +48,7 @@
     ((eq system-type 'gnu/linux) "Iosevka-20")))
 
 (add-to-list 'default-frame-alist `(font . ,(get-default-font)))
+(add-to-list 'default-frame-alist `(fullscreen . maximized))
 
 (set-face-attribute 'default nil
                     :family (get-default-font) :height 100)
@@ -65,3 +72,21 @@
 
 (require 'cc)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . cc))
+
+(global-set-key (kbd "C-c C-p") 'find-file-at-point)
+
+(require 'subr-x)
+
+(defun duplicate-line ()
+  "Duplicate current line"
+  (interactive)
+  (let ((column (- (point) (point-at-bol)))
+        (line (let ((s (thing-at-point 'line t)))
+                (if s (string-remove-suffix "\n" s) ""))))
+    (move-end-of-line 1)
+    (newline)
+    (insert line)
+    (move-beginning-of-line 1)
+    (forward-char column)))
+
+(global-set-key (kbd "C-,") 'duplicate-line)

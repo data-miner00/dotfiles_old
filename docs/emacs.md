@@ -11,3 +11,8 @@ emacs -nw
 <M-x> describe-font
 <M-x> version
 ~ in Windows resolves to C:/Users/User/AppData/Roaming unfortunately
+<C-Windows-Up> - maximize window
+
+`inhibit-splash-screen` = `inhibit-startup-message` = `inhibit-startup-screen`
+
+`copy-from-above-command`
