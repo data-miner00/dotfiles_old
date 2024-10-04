@@ -19,7 +19,7 @@ Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
 Set-Alias -Name exp -Value explorer.exe
 Set-Alias -Name google -Value Search-Google
-Set-Alias -Name env -Value Get-EnvironmentVariables
+Set-Alias -Name envs -Value Get-EnvironmentVariables # 'env' conflicts with scoop install script
 Set-Alias -Name goto -Value Switch-Location
 
 function reason {
@@ -29,3 +29,9 @@ function reason {
 function ip {
     Invoke-WebRequest ifconfig.me | Select-Object -Property Content
 }
+
+$ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
+$ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
+
+# Start Starship
+Invoke-Expression (&starship init powershell)
