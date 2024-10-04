@@ -159,6 +159,14 @@
                 "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             },
             {
+                "backgroundImage": "desktopWallpaper",
+                "backgroundImageOpacity": 0.2,
+                "colorScheme": "One Half Dark",
+                "cursorShape": "filledBox",
+                "font": 
+                {
+                    "face": "CaskaydiaMono Nerd Font"
+                },
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
@@ -399,9 +407,9 @@
             "yellow": "#808000"
         }
     ],
-    "startOnUserLogin": true,
-    "themes": [],
     "showTabsInTitlebar": true,
+    "startOnUserLogin": true,
     "tabSwitcherMode": "inOrder",
+    "themes": [],
     "useAcrylicInTabRow": true
 }
