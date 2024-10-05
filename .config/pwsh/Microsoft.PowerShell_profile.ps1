@@ -27,7 +27,7 @@ function reason {
 }
 
 function ip {
-    Invoke-WebRequest ifconfig.me | Select-Object -Property Content
+    (Invoke-WebRequest ifconfig.me).Content
 }
 
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
