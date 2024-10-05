@@ -33,6 +33,12 @@ function ip {
     (Invoke-WebRequest ifconfig.me).Content
 }
 
+function mkcd {
+    $DirPath = $args[0]
+    mkdir -p $DirPath
+    Set-Location $DirPath
+}
+
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
 $ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
 
