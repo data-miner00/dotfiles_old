@@ -27,6 +27,7 @@ $rust\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
+$cmd_duration\
 \n$character"""
 
 [directory]
@@ -68,6 +69,7 @@ format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [character]
 success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 
 # Disable the package module, hiding it from the prompt completely
 [package]
