@@ -1,66 +1,100 @@
 Param (
-    [Parameter(Mandatory=$false, HelpMessage="The manifest file")]
+    [Parameter(Mandatory=$false, HelpMessage="The manifest file that describes the symlink.")]
     [string]$ManifestFile = "MANIFEST"
 )
 
-# For some reason, administrator mode will not recognize current path when reading file below.
-$ManifestFile = "$(Get-Location)/$ManifestFile"
+$ErrorActionPreference = "Stop"
 
-$currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
-$isAdmin = $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+function Main {
+    # For some reason, administrator mode will not recognize current path when reading file below.
+    $ManifestFile = "$(Get-Location)/$ManifestFile"
 
-if (!$isAdmin) {
-    throw "Admin rights is needed for symlink"
+    ExitIfNotAdmin
+
+    Write-Host "Deploying $ManifestFile..."
+
+    $lines = [System.IO.File]::ReadAllLines($ManifestFile)
+    $header = ExtractHeaderFromManifest -RawHeaderString $lines[0]
+
+    [System.Collections.ArrayList]$WillAdd  = @()
+    [System.Collections.ArrayList]$WillRemove  = @()
+
+    $WillAdd.Add($header) *>$null
+
+    foreach ($line in $lines) {
+        if (!$line.StartsWith('#')) {
+            $WillAdd.Add($line.Trim('|')) *>$null
+        } else {
+            $WillRemove.Add($line.Substring(1).Trim('|')) *>$null
+        }
+    }
+
+    $ManifestFileTemp = "$ManifestFile.tmp"
+    $ManifestFileRemove = "$ManifestFile.rmv"
+
+    [System.IO.File]::WriteAllLines($ManifestFileTemp, $WillAdd)
+    [System.IO.File]::WriteAllLines($ManifestFileRemove, $WillRemove)
+
+    PerformUnlinking -TempManifestFileName $ManifestFileRemove
+    PerformLinking -TempManifestFileName $ManifestFileTemp
+
+    Remove-Item -Path $ManifestFileTemp
+    Remove-Item -Path $ManifestFileRemove
+
+    Write-Host Successfully performed count linking and count unlinking.
 }
 
-Write-Host "Deploying $ManifestFile..."
+function ExitIfNotAdmin {
+    $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+    $isAdmin = $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
-$lines = [System.IO.File]::ReadAllLines($ManifestFile)
-
-$firstLine = $lines[0]
-$header = $firstLine.Substring(2).TrimEnd('|')
-
-[System.Collections.ArrayList]$WillProcess  = @()
-[System.Collections.ArrayList]$WillRemove  = @()
-
-$WillProcess.Add($header) *>$null
-$WillRemove.Add($header) *>$null
-
-foreach ($line in $lines) {
-    if (!$line.StartsWith('#')) {
-        $WillProcess.Add($line.Trim('|')) *>$null
-    } else {
-        $WillRemove.Add($line.Substring(1).Trim('|')) *>$null
+    if (!$isAdmin) {
+        throw "Admin rights is needed for symlink"
     }
 }
 
-$ManifestFileTemp = "$ManifestFile.tmp"
-$ManifestFileRemove = "$ManifestFile.rmv"
+function ExtractHeaderFromManifest {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string]$RawHeaderString
+    )
+    $header = $RawHeaderString.Substring(2).TrimEnd('|')
 
-[System.IO.File]::WriteAllLines($ManifestFileTemp, $WillProcess)
-[System.IO.File]::WriteAllLines($ManifestFileRemove, $WillRemove)
+    return $header
+}
 
-$CsvRemoveContent = Import-Csv $ManifestFileRemove -Delimiter "|"
+function PerformUnlinking {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string]$TempManifestFileName
+    )
 
-foreach ($entry in $CsvRemoveContent) {
-    if ((Get-Item $entry.Destination -ErrorAction SilentlyContinue)) {
-        Remove-Item $entry.Destination
-        Write-Host "[ok] Removed symlink at $($entry.Destination)"
+    $data = Import-Csv $TempManifestFileName -Delimiter "|"
+
+    foreach ($row in $data) {
+        if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
+            Remove-Item $row.Destination
+            Write-Host "[ok] Removed symlink at $($row.Destination)"
+        }
     }
 }
 
-$CsvContent = Import-Csv $ManifestFileTemp -Delimiter "|"
+function PerformLinking {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string]$TempManifestFileName
+    )
 
-foreach ($entry in $CsvContent) {
-    if ((Get-Item $entry.Destination -ErrorAction SilentlyContinue)) {
-        Write-Warning "[skipped] The $($entry.Destination) already exist"
-    } else {
-        New-Item -Path $entry.Destination -ItemType SymbolicLink -Value $entry.Source 1>$null
-        Write-Host "Created symlink at $($entry.Destination)"
+    $data = Import-Csv $TempManifestFileName -Delimiter "|"
+
+    foreach ($row in $data) {
+        if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
+            Write-Warning "[skipped] The $($row.Destination) already exist"
+        } else {
+            New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
+            Write-Host "[ok] Created symlink at $($row.Destination)"
+        }
     }
 }
 
-Remove-Item -Path $ManifestFileTemp
-Remove-Item -Path $ManifestFileRemove
-
-Write-Host Done
+Main
