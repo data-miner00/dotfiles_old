@@ -21,18 +21,33 @@ $firstLine = $lines[0]
 $header = $firstLine.Substring(2).TrimEnd('|')
 
 [System.Collections.ArrayList]$WillProcess  = @()
+[System.Collections.ArrayList]$WillRemove  = @()
 
 $WillProcess.Add($header) *>$null
+$WillRemove.Add($header) *>$null
 
 foreach ($line in $lines) {
     if (!$line.StartsWith('#')) {
         $WillProcess.Add($line.Trim('|')) *>$null
+    } else {
+        $WillRemove.Add($line.Substring(1).Trim('|')) *>$null
     }
 }
 
 $ManifestFileTemp = "$ManifestFile.tmp"
+$ManifestFileRemove = "$ManifestFile.rmv"
 
 [System.IO.File]::WriteAllLines($ManifestFileTemp, $WillProcess)
+[System.IO.File]::WriteAllLines($ManifestFileRemove, $WillRemove)
+
+$CsvRemoveContent = Import-Csv $ManifestFileRemove -Delimiter "|"
+
+foreach ($entry in $CsvRemoveContent) {
+    if ((Get-Item $entry.Destination -ErrorAction SilentlyContinue)) {
+        Remove-Item $entry.Destination
+        Write-Host "[ok] Removed symlink at $($entry.Destination)"
+    }
+}
 
 $CsvContent = Import-Csv $ManifestFileTemp -Delimiter "|"
 
@@ -46,5 +61,6 @@ foreach ($entry in $CsvContent) {
 }
 
 Remove-Item -Path $ManifestFileTemp
+Remove-Item -Path $ManifestFileRemove
 
 Write-Host Done
