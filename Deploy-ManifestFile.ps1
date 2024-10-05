@@ -35,13 +35,13 @@ function Main {
     [System.IO.File]::WriteAllLines($ManifestFileTemp, $WillAdd)
     [System.IO.File]::WriteAllLines($ManifestFileRemove, $WillRemove)
 
-    PerformUnlinking -TempManifestFileName $ManifestFileRemove
-    PerformLinking -TempManifestFileName $ManifestFileTemp
+    $unlinkCount = PerformUnlinking -TempManifestFileName $ManifestFileRemove
+    $linkCount = PerformLinking -TempManifestFileName $ManifestFileTemp
 
     Remove-Item -Path $ManifestFileTemp
     Remove-Item -Path $ManifestFileRemove
 
-    Write-Host Successfully performed count linking and count unlinking.
+    Write-Host Successfully performed $linkCount linking and $unlinkCount unlinking.
 }
 
 function ExitIfNotAdmin {
@@ -70,13 +70,17 @@ function PerformUnlinking {
     )
 
     $data = Import-Csv $TempManifestFileName -Delimiter "|"
+    $counter = 0
 
     foreach ($row in $data) {
         if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
             Remove-Item $row.Destination
             Write-Host "[ok] Removed symlink at $($row.Destination)"
+            $counter++
         }
     }
+
+    return $counter
 }
 
 function PerformLinking {
@@ -86,6 +90,7 @@ function PerformLinking {
     )
 
     $data = Import-Csv $TempManifestFileName -Delimiter "|"
+    $counter = 0
 
     foreach ($row in $data) {
         if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
@@ -93,8 +98,11 @@ function PerformLinking {
         } else {
             New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
             Write-Host "[ok] Created symlink at $($row.Destination)"
+            $counter++
         }
     }
+
+    return $counter
 }
 
 Main
