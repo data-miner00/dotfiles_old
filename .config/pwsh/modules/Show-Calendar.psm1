@@ -1,5 +1,5 @@
 <#
- .Synopsis
+.Synopsis
   Displays a visual representation of a calendar.
 
 .Description

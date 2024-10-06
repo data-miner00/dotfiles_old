@@ -1,3 +1,19 @@
+<#
+.Synopsis
+    Prune local and origin branches.
+.Description
+    Removes unused local branches besides the default branch and cleanup stale origin branches.
+    This will occur when practising trunk-based development (https://trunkbaseddevelopment.com/).
+    It is annoying to have bunch of stale local/origin branches laying around.
+.Parameter DefaultBranchName
+    The default branch name on the local to not be removed. Defaults to `master`.
+.Example
+    # Removes origin and local branches except the default branch
+    Prune-LocalBranch
+.Example
+    # Removes origin and local branches except `main`
+    Prune-LocalBranch -DefaultBranchName main
+#>
 function Prune-LocalBranch {
     [CmdletBinding(ConfirmImpact = 'High', SupportsShouldProcess)]
     Param (

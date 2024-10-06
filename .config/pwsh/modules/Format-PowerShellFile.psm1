@@ -1,3 +1,20 @@
+<#
+.Synopsis
+    Formats a messy PowerShell source file.
+.Description
+    Formats a PowerShell source file according to the preset rules by Microsoft.
+.Parameter FilePath
+    The file path to the PowerShell source file.
+.Parameter PrintOriginal
+    Indicates whether to print the original content of the PowerShell source file.
+    Defaults to `$false`.
+.Example
+    # Formatting a source file.
+    Format-PowerShellFile -FilePath ~/myscript.ps1
+.Example
+    # Formatting a source file and prints the original content.
+    Format-PowerShellFile -FilePath ~/myscript.ps1 -PrintOriginal
+#>
 function Format-PowerShellFile {
     param (
         [Parameter(Mandatory=$true, HelpMessage="The path to the file")]
