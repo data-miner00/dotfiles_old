@@ -1,5 +1,5 @@
 #|Source|Destination|Type|
-|.config/emacs|~/AppData/Local/emacs.d|symlink|
+|.config/emacs|~/AppData/Roaming/.emacs.d|symlink|
 |.config/starship.toml|~/.config/starship.toml|symlink|
 |.config/neofetch|~/.config/neofetch|symlink|
 |.config/nvim|~/AppData/Local/nvim|symlink|
