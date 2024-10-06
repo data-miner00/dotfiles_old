@@ -1,10 +1,20 @@
 local languages = {
-  'c', 'lua', 'rust', 'haskell', 'vim',
-  'vimdoc', 'python', 'clojure', 'tsx',
-  'cpp', 'go', 'html', 'javascript'
+  "c",
+  "lua",
+  "rust",
+  "haskell",
+  "vim",
+  "vimdoc",
+  "python",
+  "clojure",
+  "tsx",
+  "cpp",
+  "go",
+  "html",
+  "javascript",
 }
 
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup({
   -- A list of parser names, or "all"
   ensure_installed = languages,
 
@@ -15,4 +25,4 @@ require('nvim-treesitter.configs').setup {
   indent = { enable = true, disable = { "yaml" } },
   modules = {},
   ignore_install = {},
-}
+})
