@@ -16,3 +16,10 @@ emacs -nw
 `inhibit-splash-screen` = `inhibit-startup-message` = `inhibit-startup-screen`
 
 `copy-from-above-command`
+
+<M-x> ielm - open elisp repl
+<C-M-\> - indent highlighted region
+
+`setq name 2` is equivalent to `set 'name 2`
+
+`cons` used to chain list together

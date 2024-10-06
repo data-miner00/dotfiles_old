@@ -34,3 +34,10 @@
 - https://www.nerdfonts.com/
 - https://www.youtube.com/watch?v=AK2JE2YsKto
 - https://stackoverflow.com/questions/5436563/setting-emacs-font-under-windows
+- https://docs.brew.sh/Cask-Cookbook
+- https://scoop.sh/
+- https://code.visualstudio.com/docs/editor/userdefinedsnippets
+- https://yaml-multiline.info/
+- https://github.com/starship/starship/discussions/1107
+- https://earthly.dev/blog/bazel-build/
+- [Discarding Output](https://powershell.one/code/9.html)

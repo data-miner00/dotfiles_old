@@ -36,3 +36,5 @@
 - [elpaca](https://github.com/progfolio/elpaca)
 - [Org Mode](https://orgmode.org/)
 - [Configuring Emacs on My New Laptop](https://www.youtube.com/watch?v=81MdyDYqB-A)
+- [Evaluating Elisp in Emacs](https://www.masteringemacs.org/article/evaluating-elisp-emacs)
+- [Cheat Sheet](https://www.shortcutfoo.com/app/dojos/emacs/cheatsheet)
