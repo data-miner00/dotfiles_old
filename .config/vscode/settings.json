@@ -1,12 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "diffEditor.ignoreTrimWhitespace": false,
-  "hardhat.telemetry": true,
   "workbench.colorTheme": "Default Dark+ Experimental",
   "d.dubCompiler": "dmd.EXE",
   "d.stdlibPath": "auto",
   "d.dubPath": "C:\\D\\dmd2\\windows\\bin64\\dub.exe",
-  "editor.formatOnSave": true,
   "svelte.enable-ts-plugin": true,
   "[python]": {
     "editor.formatOnType": true
@@ -25,5 +23,12 @@
   "julia.enableTelemetry": true,
   "extensions.ignoreRecommendations": true,
   "vim.vimrc.enable": true,
-  "vim.leader": " "
+  "vim.leader": " ",
+  "window.commandCenter": false,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "files.associations": {
+    "*.html": "html"
+  },
+  "discord.enabled": false,
+  "editor.formatOnSave": true
 }
