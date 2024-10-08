@@ -16,6 +16,7 @@ Import-Module -Name $PSModuleFolder\Push-GitTag.psm1
 Import-Module -Name $PSModuleFolder\Get-EnvironmentVariables.psm1
 Import-Module -Name $PSModuleFolder\Prune-LocalBranch.psm1 -DisableNameChecking
 Import-Module -Name $PSModuleFolder\Open-GitHubRepository.psm1
+Import-Module -Name $PSModuleFolder\Get-Colors.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
@@ -24,6 +25,7 @@ Set-Alias -Name google -Value Search-Google
 Set-Alias -Name envs -Value Get-EnvironmentVariables # 'env' conflicts with scoop install script
 Set-Alias -Name goto -Value Switch-Location
 Set-Alias -Name gh -Value Open-GitHubRepository
+Set-Alias -Name colors -Value Show-Colors
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
