@@ -34,5 +34,26 @@ function Switch-Location {
     }
 }
 
+function Switch-PreviousLocation {
+    Param (
+        [ValidateRange(1, 3)]
+        [Parameter(Mandatory=$false, HelpMessage="The level of directories to return to.")]
+        [int]$Levels = 1
+    )
+
+    switch ($Levels) {
+        1 {
+            Set-Location -Path ..
+        }
+        2 {
+            Set-Location -Path ../..
+        }
+        3 {
+            Set-Location -Path ../../..
+        }
+    }
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
+Export-ModuleMember -Function Switch-PreviousLocation

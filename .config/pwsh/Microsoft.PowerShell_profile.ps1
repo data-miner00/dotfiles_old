@@ -26,6 +26,7 @@ Set-Alias -Name envs -Value Get-EnvironmentVariables # 'env' conflicts with scoo
 Set-Alias -Name goto -Value Switch-Location
 Set-Alias -Name gh -Value Open-GitHubRepository
 Set-Alias -Name colors -Value Show-Colors
+Set-Alias -Name ".." -Value Switch-PreviousLocation
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
@@ -39,6 +40,14 @@ function mkcd {
     $DirPath = $args[0]
     mkdir -p $DirPath
     Set-Location $DirPath
+}
+
+function ... {
+    Switch-PreviousLocation -Levels 2
+}
+
+function .... {
+    Switch-PreviousLocation -Levels 3
 }
 
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
