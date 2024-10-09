@@ -17,6 +17,7 @@ Import-Module -Name $PSModuleFolder\Get-EnvironmentVariables.psm1
 Import-Module -Name $PSModuleFolder\Prune-LocalBranch.psm1 -DisableNameChecking
 Import-Module -Name $PSModuleFolder\Open-GitHubRepository.psm1
 Import-Module -Name $PSModuleFolder\Get-Colors.psm1
+Import-Module -Name $PSModuleFolder\Get-FreeDiskSpace.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
