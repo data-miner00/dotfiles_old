@@ -1,11 +1,14 @@
 $DDrive="D:"
 $DOTFILES="$DDrive\Workspace\dotfiles"
 $PSModuleFolder="$DOTFILES\.config\pwsh\modules"
-$GitHubUsername="data-miner00"
+
+# Load custom configurations
+$Configs = Import-PowerShellDataFile -Path "$DOTFILES\.config\pwsh\Configurations.psd1"
+$GitHubUsername = $Configs.GitHubUsername
 
 neofetch --ascii $DOTFILES\.config\neofetch\ascii\windows_small.txt
 
-Write-Host "Howdy folks!"
+Write-Host $Configs.WelcomeText
 
 Import-Module -Name $PSModuleFolder\New-Symlink.psm1
 Import-Module -Name $PSModuleFolder\library.psm1
