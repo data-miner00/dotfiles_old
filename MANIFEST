@@ -10,3 +10,5 @@
 |.vimrc|~/.vimrc|symlink|
 #|.vimrc|~/.vimrc_test|symlink|
 #|.vimrc|~/.vimrc_test2|symlink|
+|.config/glazewm/config.yaml|~/.glzr/glazewm/config.yaml|symlink|
+|.config/zebar|~/.glzr/zebar|symlink|
