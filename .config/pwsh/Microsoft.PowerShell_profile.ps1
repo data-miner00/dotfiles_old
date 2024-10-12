@@ -1,6 +1,7 @@
 $DDrive="D:"
 $DOTFILES="$DDrive\Workspace\dotfiles"
 $PSModuleFolder="$DOTFILES\.config\pwsh\modules"
+$PSScriptFolder="$DOTFILES\.config\pwsh\scripts"
 
 # Load custom configurations
 $Configs = Import-PowerShellDataFile -Path "$DOTFILES\.config\pwsh\Configurations.psd1"
@@ -46,6 +47,11 @@ function mkcd {
     $DirPath = $args[0]
     mkdir -p $DirPath
     Set-Location $DirPath
+}
+
+function refresh {
+    # preceding . to indicate execution of file
+    .$PSScriptFolder\refresh.ps1
 }
 
 function ... {

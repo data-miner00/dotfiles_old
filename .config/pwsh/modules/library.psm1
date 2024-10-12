@@ -13,7 +13,7 @@ function Write-Hello {
 function Switch-Location {
     Param (
         [Parameter(Mandatory=$true, HelpMessage="The location to move to.")]
-        [ValidateSet("dl", "ws", "home", "vs")]
+        [ValidateSet("dl", "ws", "home", "vs", "p")]
         [string]$Location
     )
 
@@ -30,6 +30,9 @@ function Switch-Location {
         }
         "vs" {
             Set-Location -Path "$DDrive/Workspace/Visual Studio"
+        }
+        "p" {
+            Set-Location -Path "$DDrive/Workspace/projects"
         }
         default {
             Write-Error "Invalid location provided."
