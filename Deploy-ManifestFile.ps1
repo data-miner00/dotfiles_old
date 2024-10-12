@@ -152,14 +152,14 @@ function PerformLinking {
             if ($row.Type -eq "symlink") {
                 New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
                 Write-Host "[ok] Created symlink at $($row.Destination)"
+                $counter++
             } elseif ($row.Type -eq "copy") {
                 Copy-Item -Path $row.Source -Destination $row.Destination
                 Write-Host "[ok] Copied file at $($row.Destination)"
+                $counter++
             } else {
-                throw "Invalid operation '$($row.Type)' provided."
+                Write-Warning "[warn] Invalid operation '$($row.Type)' provided for '$($row.Destination)'."
             }
-
-            $counter++
         }
     }
 
