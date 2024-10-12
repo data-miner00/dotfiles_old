@@ -45,7 +45,7 @@ function Format-PowerShellFile {
     $formatted = Invoke-Formatter -ScriptDefinition $content
 
     if ($PrintOriginal -or $Preview) {
-        Write-Host $formatted
+        Write-Host $formatted -ForegroundColor DarkMagenta
     }
 
     if ($Preview) {
