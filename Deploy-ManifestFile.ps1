@@ -94,7 +94,7 @@ function Main {
     Remove-Item -Path $ManifestFileTemp
     Remove-Item -Path $ManifestFileRemove
 
-    Write-Host Successfully performed $linkCount linking and $unlinkCount unlinking.
+    Write-Host Successfully performed $linkCount linking/copy and $unlinkCount unlinking/delete.
 }
 
 function ExitIfNotAdmin {
@@ -128,7 +128,7 @@ function PerformUnlinking {
     foreach ($row in $data) {
         if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
             Remove-Item $row.Destination
-            Write-Host "[ok] Removed symlink at $($row.Destination)"
+            Write-Host "[ok] Removed symlink/file at $($row.Destination)"
             $counter++
         }
     }
@@ -149,8 +149,16 @@ function PerformLinking {
         if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
             Write-Warning "[skipped] The $($row.Destination) already exist"
         } else {
-            New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
-            Write-Host "[ok] Created symlink at $($row.Destination)"
+            if ($row.Type -eq "symlink") {
+                New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
+                Write-Host "[ok] Created symlink at $($row.Destination)"
+            } elseif ($row.Type -eq "copy") {
+                Copy-Item -Path $row.Source -Destination $row.Destination
+                Write-Host "[ok] Copied file at $($row.Destination)"
+            } else {
+                throw "Invalid operation '$($row.Type)' provided."
+            }
+
             $counter++
         }
     }
