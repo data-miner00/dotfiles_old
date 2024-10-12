@@ -8,12 +8,17 @@
 .Parameter PrintOriginal
     Indicates whether to print the original content of the PowerShell source file.
     Defaults to `$false`.
+.Parameter Preview
+    Dry-run the execution before commiting the changes.
 .Example
     # Formatting a source file.
     Format-PowerShellFile -FilePath ~/myscript.ps1
 .Example
     # Formatting a source file and prints the original content.
     Format-PowerShellFile -FilePath ~/myscript.ps1 -PrintOriginal
+.Example
+    # Preview the changes. No need to provide `-PrintOriginal`.
+    Format-PowerShellFile -FilePath ~/myscript.ps1 -Preview
 #>
 function Format-PowerShellFile {
     param (
@@ -21,7 +26,10 @@ function Format-PowerShellFile {
         [string]$FilePath,
 
         [Parameter(Mandatory=$false, HelpMessage="Whether to print out the formatted content or not")]
-        [bool]$PrintOriginal = $false
+        [switch]$PrintOriginal,
+
+        [Parameter(Mandatory=$false, HelpMessage="Preview the changes instead of commiting the changes.")]
+        [switch]$Preview
     )
 
     if ([string]::IsNullOrWhiteSpace($FilePath)) {
@@ -36,10 +44,15 @@ function Format-PowerShellFile {
     $content = Get-Content -Path $FilePath | Out-String
     $formatted = Invoke-Formatter -ScriptDefinition $content
 
-    if ($PrintOriginal) {
+    if ($PrintOriginal -or $Preview) {
         Write-Host $formatted
     }
 
+    if ($Preview) {
+        Write-Host "Script exited in preview mode"
+        return
+    }
+
     $formatted | Set-Content -Path $FilePath
-    Write-Host "Formatted '$FilePath'"
+    Write-Host "[ok] Formatted '$FilePath'"
 }
