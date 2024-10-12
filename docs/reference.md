@@ -38,3 +38,7 @@
 - [Configuring Emacs on My New Laptop](https://www.youtube.com/watch?v=81MdyDYqB-A)
 - [Evaluating Elisp in Emacs](https://www.masteringemacs.org/article/evaluating-elisp-emacs)
 - [Cheat Sheet](https://www.shortcutfoo.com/app/dojos/emacs/cheatsheet)
+
+## Powershell
+
+- [PSScriptAnalyzer Rules](https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/rules/readme?view=ps-modules)
