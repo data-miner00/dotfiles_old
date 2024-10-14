@@ -40,6 +40,10 @@
 
       createRoot(document.getElementById("root")).render(<App />);
 
+      function toSentenceCase(str) {
+        return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+      }
+
       function App() {
         const [output, setOutput] = useState(providers.outputMap);
 
@@ -120,7 +124,12 @@
             thunder_night: "nf nf-weather-night_alt_lightning",
           };
 
-          return <i className={weatherMappings[weatherStatus]}></i>;
+          return (
+            <i
+              title={toSentenceCase(weatherStatus.replace(/_/g, " "))}
+              className={weatherMappings[weatherStatus]}
+            ></i>
+          );
         }
 
         return (
