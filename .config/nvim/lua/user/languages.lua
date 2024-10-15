@@ -3,7 +3,7 @@ local M = {}
 M.servers = {
   "lua_ls",
   "cssls",
-  "tsserver",
+  "ts_ls",
   "jsonls",
   "clangd",
 }
