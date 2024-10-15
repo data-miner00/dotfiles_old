@@ -30,5 +30,28 @@ function Search-Google2 {
     $response | Select-Object -Property Content | Write-Host
 }
 
+function Search-GoogleSession {
+    param (
+        [Parameter(Mandatory=$false, HelpMessage="The custom prompt")]
+        [string]$Prompt = "> "
+    )
+
+    Write-Host "Listening to queries..."
+
+    while ($true) {
+        [System.Console]::Write($Prompt)
+        $query = [System.Console]::ReadLine()
+
+        if ($query.StartsWith("-1") -or $query.StartsWith("exit")) {
+            break
+        }
+
+        $googleUrl = "https://www.google.com/search?q=$([uri]::EscapeDataString($query))"
+
+        [System.Diagnostics.Process]::Start("chrome", $googleUrl) *>$null
+    }
+}
+
 Export-ModuleMember -Function Search-Google
 Export-ModuleMember -Function Search-Google2
+Export-ModuleMember -Function Search-GoogleSession

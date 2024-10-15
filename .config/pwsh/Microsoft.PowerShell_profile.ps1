@@ -54,6 +54,10 @@ function refresh {
     .$PSScriptFolder\refresh.ps1
 }
 
+function google2 {
+    Search-GoogleSession -Prompt "google> "
+}
+
 function ... {
     Switch-PreviousLocation -Levels 2
 }
