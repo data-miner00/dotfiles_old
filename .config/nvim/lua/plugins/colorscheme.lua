@@ -9,7 +9,7 @@ return {
     local macchiato = "macchiato"
 
     require("catppuccin").setup({
-      flavour = latte,
+      flavour = macchiato,
     })
     vim.cmd.colorscheme("catppuccin")
   end,

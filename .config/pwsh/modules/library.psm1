@@ -60,6 +60,11 @@ function Switch-PreviousLocation {
     }
 }
 
+function Open-StartupFolder {
+    explorer.exe shell:startup
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
+Export-ModuleMember -Function Open-StartupFolder

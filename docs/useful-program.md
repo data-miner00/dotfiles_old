@@ -42,3 +42,9 @@
 - [ ] Windows Terminal
 - [ ] Thunderbird
 - [ ] Android Studio
+- [ ] glazewm
+- [ ] zebar
+- [ ] deno
+- [ ] bun
+- [ ] Notepad++
+- [ ] WezTerm
