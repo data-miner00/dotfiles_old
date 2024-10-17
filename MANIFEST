@@ -14,3 +14,4 @@
 |.config/glazewm/config.yaml|~/.glzr/glazewm/config.yaml|symlink|
 |.config/zebar|~/.glzr/zebar|symlink|
 #|.vimrc|~/.vimrcx|copy|
+|.config/wezterm|~/.config/wezterm|symlink|
