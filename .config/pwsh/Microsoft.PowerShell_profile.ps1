@@ -66,6 +66,10 @@ function .... {
     Switch-PreviousLocation -Levels 3
 }
 
+function :q {
+    exit
+}
+
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
 $ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
 
