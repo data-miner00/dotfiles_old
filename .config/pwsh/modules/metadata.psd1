@@ -11,6 +11,7 @@
         "Open-GitHubRepository",
         "Open-GitHubRepository2",
         "Get-Colors",
-        "Get-FreeDiskSpace"
+        "Get-FreeDiskSpace",
+        "Amalgamate-Search"
     )
 }

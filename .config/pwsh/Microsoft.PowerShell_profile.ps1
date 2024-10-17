@@ -23,6 +23,7 @@ Import-Module -Name $PSModuleFolder\Open-GitHubRepository.psm1
 Import-Module -Name $PSModuleFolder\Open-GitHubRepository2.psm1
 Import-Module -Name $PSModuleFolder\Get-Colors.psm1
 Import-Module -Name $PSModuleFolder\Get-FreeDiskSpace.psm1
+Import-Module -Name $PSModuleFolder\Amalgamate-Search.psm1 -DisableNameChecking
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
@@ -34,6 +35,7 @@ Set-Alias -Name gh -Value Open-GitHubRepository
 Set-Alias -Name g -Value Open-GitHubRepository2
 Set-Alias -Name colors -Value Show-Colors
 Set-Alias -Name ".." -Value Switch-PreviousLocation
+Set-Alias -Name s -Value Amalgamate-Search
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
