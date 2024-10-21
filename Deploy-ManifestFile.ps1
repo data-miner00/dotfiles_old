@@ -149,6 +149,11 @@ function PerformLinking {
         if ((Get-Item $row.Destination -ErrorAction SilentlyContinue)) {
             Write-Warning "[skipped] The $($row.Destination) already exist"
         } else {
+            $parentPath = [System.IO.Path]::GetDirectoryName($row.Destination)
+            if (-not (Test-Path $parentPath)) {
+                New-Item -ItemType Directory -Path $parentPath -Force *>$null
+            }
+
             if ($row.Type -eq "symlink") {
                 New-Item -Path $row.Destination -ItemType SymbolicLink -Value $row.Source 1>$null
                 Write-Host "[ok] Created symlink at $($row.Destination)"
