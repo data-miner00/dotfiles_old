@@ -4,8 +4,27 @@
  */
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
+:root {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+
+  --accent-color: var(--sky);
+}
+
 i {
-  color: #a8b4a0f2;
+  color: var(--accent-color);
   margin-right: 7px;
 }
 
@@ -23,8 +42,9 @@ body,
 }
 
 #root {
-  border-bottom: 1px solid rgb(255 255 255 / 5%);
-  background: linear-gradient(rgb(0 0 0 / 75%), rgb(5 2 20 / 65%));
+  /* border-bottom: 1px solid rgb(255 255 255 / 5%); */
+  /* background: linear-gradient(rgb(0 0 0 / 75%), rgb(5 2 20 / 65%)); */
+  background: transparent;
 }
 
 .app {
@@ -40,6 +60,9 @@ body,
 .right {
   display: flex;
   align-items: center;
+
+  /* prevent child items to expand over their allocated space */
+  min-width: 0;
 }
 
 .center {
@@ -71,8 +94,9 @@ body,
   padding: 4px 8px;
   color: rgb(255 255 255 / 90%);
   border: none;
-  border-radius: 2px;
+  border-radius: 999px;
   cursor: pointer;
+  transition: background 0.4s ease;
 
   &.displayed {
     background: rgb(255 255 255 / 15%);
@@ -80,8 +104,16 @@ body,
 
   &.focused,
   &:hover {
-    background: #a8b4a080;
+    background: var(--accent-color);
   }
+}
+
+.focused-window-title {
+  padding-left: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .binding-mode,
