@@ -16,3 +16,4 @@
 |.config/zebar|~/.glzr/zebar|symlink|
 #|.vimrc|~/.vimrcx|copy|
 |.config/wezterm|~/.config/wezterm|symlink|
+|.config/fastfetch/config.jsonc|~/.config/fastfetch/config.jsonc|symlink|
