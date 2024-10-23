@@ -232,6 +232,12 @@
                   {Math.round(output.weather.celsiusTemp)}°C
                 </div>
               )}
+
+              {!output.weather && (
+                <div className="weather" title="Unknown weather">
+                  <i className="nf nf-oct-question"></i>
+                </div>
+              )}
             </div>
           </div>
         );
