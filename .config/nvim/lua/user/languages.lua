@@ -6,6 +6,9 @@ M.servers = {
   "ts_ls",
   "jsonls",
   "clangd",
+  "rust_analyzer",
+  "pyright",
+  "zls",
 }
 
 M.parsers = {
