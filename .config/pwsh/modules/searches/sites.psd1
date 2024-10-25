@@ -22,6 +22,10 @@
     metacpan = "https://metacpan.org/search?size=20&q="
     maven = "https://mvnrepository.com/search?q="
     flathub = "https://flathub.org/apps/search?q="
+    hexpm = "https://hex.pm/packages?sort=recent_downloads&search="
+    hackage = "https://hackage.haskell.org/packages/search?terms="
+    gradle = "https://plugins.gradle.org/search?term="
+    pub = "https://pub.dev/packages?q="
     
     # Socials
     github = "https://github.com/search?type=repositories&q="

@@ -27,6 +27,10 @@
     12. MetaCPan
     13. Maven
     14. FlatHub
+    15. Hex.pm
+    16. Hackage
+    17. Gradle
+    18. Pub.dev
 
     Socials:
     1. GitHub
