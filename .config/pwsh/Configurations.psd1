@@ -20,7 +20,10 @@ Variables used for configuring my PowerShell profile.
             "erlang",
             "gleam",
             "stylua",
-            "wezterm"
+            "wezterm",
+            "cmake",
+            "make",
+            "fastfetch"
         )
     }
 }
