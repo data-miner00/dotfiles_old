@@ -114,15 +114,15 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
-  - name: '1'
-  - name: '2'
-  - name: '3'
-  - name: '4'
-  - name: '5'
-  - name: '6'
-  - name: '7'
-  - name: '8'
-  - name: '9'
+  - name: '일'
+  - name: '이'
+  - name: '삼'
+  - name: '사'
+  - name: '오'
+  - name: '육'
+  - name: '칠'
+  - name: '팔'
+  - name: '구'
 
 window_rules:
   - commands: ['ignore']
@@ -267,23 +267,23 @@ keybindings:
     bindings: ['alt+d', 'alt+tab']
 
   # Change focus to a workspace defined in `workspaces` config.
-  - commands: ['focus --workspace 1']
+  - commands: ['focus --workspace 일']
     bindings: ['alt+1']
-  - commands: ['focus --workspace 2']
+  - commands: ['focus --workspace 이']
     bindings: ['alt+2']
-  - commands: ['focus --workspace 3']
+  - commands: ['focus --workspace 삼']
     bindings: ['alt+3']
-  - commands: ['focus --workspace 4']
+  - commands: ['focus --workspace 사']
     bindings: ['alt+4']
-  - commands: ['focus --workspace 5']
+  - commands: ['focus --workspace 오']
     bindings: ['alt+5']
-  - commands: ['focus --workspace 6']
+  - commands: ['focus --workspace 육']
     bindings: ['alt+6']
-  - commands: ['focus --workspace 7']
+  - commands: ['focus --workspace 칠']
     bindings: ['alt+7']
-  - commands: ['focus --workspace 8']
+  - commands: ['focus --workspace 팔']
     bindings: ['alt+8']
-  - commands: ['focus --workspace 9']
+  - commands: ['focus --workspace 구']
     bindings: ['alt+9']
 
   # Move the focused window's parent workspace to a monitor in a given
@@ -298,21 +298,21 @@ keybindings:
     bindings: ['alt+shift+s']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace 1', 'focus --workspace 1']
+  - commands: ['move --workspace 일', 'focus --workspace 일']
     bindings: ['alt+shift+1']
-  - commands: ['move --workspace 2', 'focus --workspace 2']
+  - commands: ['move --workspace 이', 'focus --workspace 이']
     bindings: ['alt+shift+2']
-  - commands: ['move --workspace 3', 'focus --workspace 3']
+  - commands: ['move --workspace 삼', 'focus --workspace 삼']
     bindings: ['alt+shift+3']
-  - commands: ['move --workspace 4', 'focus --workspace 4']
+  - commands: ['move --workspace 사', 'focus --workspace 사']
     bindings: ['alt+shift+4']
-  - commands: ['move --workspace 5', 'focus --workspace 5']
+  - commands: ['move --workspace 오', 'focus --workspace 오']
     bindings: ['alt+shift+5']
-  - commands: ['move --workspace 6', 'focus --workspace 6']
+  - commands: ['move --workspace 육', 'focus --workspace 육']
     bindings: ['alt+shift+6']
-  - commands: ['move --workspace 7', 'focus --workspace 7']
+  - commands: ['move --workspace 칠', 'focus --workspace 칠']
     bindings: ['alt+shift+7']
-  - commands: ['move --workspace 8', 'focus --workspace 8']
+  - commands: ['move --workspace 팔', 'focus --workspace 팔']
     bindings: ['alt+shift+8']
-  - commands: ['move --workspace 9', 'focus --workspace 9']
+  - commands: ['move --workspace 구', 'focus --workspace 구']
     bindings: ['alt+shift+9']
