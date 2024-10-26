@@ -34,6 +34,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+
 " Quit, write, cut
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>qq :q!<cr>
