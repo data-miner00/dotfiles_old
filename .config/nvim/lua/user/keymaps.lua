@@ -16,6 +16,14 @@ vim.keymap.set(
   { desc = "[P]Reload the edited config file in current session" }
 )
 
+-- Line wrap
+vim.keymap.set(
+  "n",
+  "<leader>lw",
+  "<cmd>set wrap!<CR>",
+  { desc = "[P]Toggle line wrap" }
+)
+
 -- Exit
 vim.keymap.set("i", "jj", "<esc>", { desc = "[P]Exit insert mode" })
 
@@ -196,11 +204,21 @@ vim.keymap.set(
   { desc = "[P]Return terminal into normal mode" }
 )
 
--- Disable Arrow keys
-vim.keymap.set("n", "<left>", "<nop>")
-vim.keymap.set("n", "<right>", "<nop>")
-vim.keymap.set("n", "<up>", "<nop>")
-vim.keymap.set("n", "<down>", "<nop>")
+-- Resize with arrows
+vim.keymap.set("n", "<Up>", ":resize -2<CR>", { desc = "[P]Resize up" })
+vim.keymap.set("n", "<Down>", ":resize +2<CR>", { desc = "[P]Resize down" })
+vim.keymap.set(
+  "n",
+  "<Left>",
+  ":vertical resize -2<CR>",
+  { desc = "[P]Resize left" }
+)
+vim.keymap.set(
+  "n",
+  "<Right>",
+  ":vertical resize +2<CR>",
+  { desc = "[P]Resize right" }
+)
 
 -- Break the line from the cursor
 vim.keymap.set("n", "<enter>", "i<CR><ESC>")
@@ -208,3 +226,11 @@ vim.keymap.set("n", "<enter>", "i<CR><ESC>")
 -- Tabbings
 vim.keymap.set({ "v", "n" }, "<tab>", ">>")
 vim.keymap.set({ "v", "n" }, "<s-tab>", "<<")
+
+-- Pastings
+vim.keymap.set(
+  "v",
+  "p",
+  '"_dP',
+  { desc = "[P]Paste while keeping last yanked contents" }
+)
