@@ -220,9 +220,6 @@ vim.keymap.set(
   { desc = "[P]Resize right" }
 )
 
--- Break the line from the cursor
-vim.keymap.set("n", "<enter>", "i<CR><ESC>")
-
 -- Tabbings
 vim.keymap.set({ "v", "n" }, "<tab>", ">>")
 vim.keymap.set({ "v", "n" }, "<s-tab>", "<<")
