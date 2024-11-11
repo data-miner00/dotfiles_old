@@ -22,7 +22,8 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  config.vm.usable_port_range = (8888..9000)
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -69,8 +70,21 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+  # Use `vagrant provision` if this block changed during a running VM.
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    sudo yum update -y
+    sudo yum install -y httpd
+    sudo yum install vim-enhanced -y
+
+    # Add index.html
+    sudo echo "<h1>Welcome to CentOS!</h1>" > /var/www/html/index.html
+
+    # Start Apache2 webserver
+    sudo systemctl enable httpd.service
+
+    # Prints welcome!
+    curl localhost
+  SHELL
 end

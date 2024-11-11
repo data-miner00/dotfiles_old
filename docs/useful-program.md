@@ -52,3 +52,5 @@
 - [ ] [Arc](https://arc.net)
 - [ ] [CMake](https://cmake.org/)
 - [ ] [Make](https://www.gnu.org/software/make/)
+- [ ] [Grammarly](https://www.grammarly.com/product/recommendation)
+- [ ] [Hoppscotch](https://hoppscotch.com/)
