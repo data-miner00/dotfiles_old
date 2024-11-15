@@ -18,19 +18,26 @@
     3. PyPi
     4. NPM
     5. jsr
-    6. Crates.io
-    7. Docker Hub
-    8. Nuget.org
-    9. PowerShell Gallery
+    6. Crates.io (crates)
+    7. Docker Hub (dockerhub)
+    8. Nuget.org (nuget)
+    9. PowerShell Gallery (psgallery)
     10. Melpa
     11. Chocolatey
     12. MetaCPan
     13. Maven
     14. FlatHub
-    15. Hex.pm
+    15. Hex.pm (hexpm)
     16. Hackage
     17. Gradle
-    18. Pub.dev
+    18. Pub.dev (pub)
+    19. Vagrant
+    20. Clojars
+    21. Open Source Insights (deps)
+
+    AI:
+    1. Kaggle
+    2. Hugging Face (hugging)
 
     Socials:
     1. GitHub
@@ -48,16 +55,16 @@
     1. General - Bulk search through Google, Bing, Duckduckgo and Qwant
     2. Code - Bulk search through GitHub, GitLab and Codeberg
 .Example
-    # Search with single provider (google)
     Amalgamate-Search google what is cask
+    # Search with single provider (google)
 
 .Example
-    # Search with single provider (github)
     Amalgamate-Search github crystal
+    # Search with single provider (github)
 
 .Example
-    # Search with 'General' profile
     Amalgamate-Search -Profile General what is HTTPs
+    # Search with 'General' profile
 #>
 function Amalgamate-Search {
     $SearchSites = Import-PowerShellDataFile $PSModuleFolder/searches/sites.psd1
@@ -65,6 +72,7 @@ function Amalgamate-Search {
 
     $searchTarget = $args[0]
     
+    # Bulk search
     if ($searchTarget.Equals(("-Profile"))) {
         $selectedProfile = $Profiles[$args[1]]
         $searchQueries = [uri]::EscapeDataString([string]::Join(" ", $($args | Select-Object -Skip 2)))
@@ -73,6 +81,8 @@ function Amalgamate-Search {
             $searchUrl = $SearchSites[$_]
             Start-Process $($searchUrl + $searchQueries)
         }
+
+    # Single search
     } else {
         $searchQueries = [uri]::EscapeDataString([string]::Join(" ", $($args | Select-Object -Skip 1)))
         $searchUrl = $SearchSites[$searchTarget]

@@ -26,6 +26,13 @@
     hackage = "https://hackage.haskell.org/packages/search?terms="
     gradle = "https://plugins.gradle.org/search?term="
     pub = "https://pub.dev/packages?q="
+    vagrant = "https://portal.cloud.hashicorp.com/vagrant/discover?query="
+    clojars = "https://clojars.org/search?q="
+    deps = "https://deps.dev/search?q="
+    
+    # AI
+    kaggle = "https://www.kaggle.com/search?q="
+    hugging = "https://huggingface.co/search/full-text?q="
     
     # Socials
     github = "https://github.com/search?type=repositories&q="
