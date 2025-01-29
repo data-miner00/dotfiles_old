@@ -47,6 +47,14 @@ function ip {
     (Invoke-WebRequest ifconfig.me).Content
 }
 
+function weather {
+    (Invoke-WebRequest wttr.in).Content
+}
+
+function skyline {
+    (Invoke-WebRequest skyline.github.com).Content
+}
+
 function mkcd {
     $DirPath = $args[0]
     mkdir -p $DirPath
