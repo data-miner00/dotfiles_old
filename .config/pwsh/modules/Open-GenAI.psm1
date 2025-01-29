@@ -8,30 +8,41 @@
 .PARAMETER $provider
     The GenAI provider.
 
+.PARAMETER $random
+    Ignores the `$provider` parameter and opens a random GenAI provider.
+
 .EXAMPLE
     gen chatgpt
+
+.EXAMPLE
+    gen -Random
 #>
 function Open-GenAI {
     param (
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory=$false)]
         [ValidateSet("chatgpt", "gemini", "claude", "copilot")]
-        [string]$provider
+        [string]$provider = "chatgpt",
+
+        [Parameter(Mandatory=$false)]
+        [Alias("r")]
+        [switch]$random
     )
 
-    switch ($provider) {
-        "chatgpt" {
-            Start-Process "https://chatgpt.com"
-        }
-        "gemini" {
-            Start-Process "https://gemini.google.com/app"
-        }
-        "claude" {
-            Start-Process "https://claude.ai/new"
-        }
-        "copilot" {
-            Start-Process "https://copilot.microsoft.com"
-        }
+    $Providers = @{
+        "chatgpt" = "https://chatgpt.com"
+        "gemini" = "https://gemini.google.com/app"
+        "claude" = "https://claude.ai/new"
+        "copilot" = "https://copilot.microsoft.com"
     }
+
+    if ($random) {
+        $values = $Providers.GetType().GetProperty('Values').GetValue($Providers)
+        $randomProvider = $values | Out-String -Stream | Get-Random
+        Start-Process $randomProvider
+        return
+    }
+
+    Start-Process $Providers[$provider]
 }
 
 Export-ModuleMember -Function Open-GenAI

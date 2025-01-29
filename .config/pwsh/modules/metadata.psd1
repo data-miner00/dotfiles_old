@@ -12,6 +12,7 @@
         "Open-GitHubRepository2",
         "Get-Colors",
         "Get-FreeDiskSpace",
-        "Amalgamate-Search"
+        "Amalgamate-Search",
+        "Open-GenAI"
     )
 }
