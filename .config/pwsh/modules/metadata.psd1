@@ -13,6 +13,7 @@
         "Get-Colors",
         "Get-FreeDiskSpace",
         "Amalgamate-Search",
-        "Open-GenAI"
+        "Open-GenAI",
+        "Show-MultiplicationTable"
     )
 }
