@@ -83,6 +83,10 @@ function :q {
     exit
 }
 
+function now {
+    Get-Date (Get-Date).ToUniversalTime() -UFormat '+%Y-%m-%dT%H:%M:%S.000Z'
+}
+
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
 $ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
 
