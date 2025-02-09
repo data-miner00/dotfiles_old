@@ -29,6 +29,7 @@
     vagrant = "https://portal.cloud.hashicorp.com/vagrant/discover?query="
     clojars = "https://clojars.org/search?q="
     deps = "https://deps.dev/search?q="
+    dub = "https://code.dlang.org/search?q="
     
     # AI
     kaggle = "https://www.kaggle.com/search?q="

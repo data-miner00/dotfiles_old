@@ -34,6 +34,7 @@
     19. Vagrant
     20. Clojars
     21. Open Source Insights (deps)
+    22. D Package registry (dub)
 
     AI:
     1. Kaggle
