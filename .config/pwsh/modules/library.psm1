@@ -64,7 +64,13 @@ function Open-StartupFolder {
     explorer.exe shell:startup
 }
 
+function Get-GitCommitCount {
+    $gitCommitCount = git rev-list --count HEAD
+    Write-Host "The number of commits in the current branch is $gitCommitCount"
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
 Export-ModuleMember -Function Open-StartupFolder
+Export-ModuleMember -Function Get-GitCommitCount
