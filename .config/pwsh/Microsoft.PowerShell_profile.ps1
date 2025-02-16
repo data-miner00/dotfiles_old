@@ -9,7 +9,9 @@ $GitHubUsername = $Configs.GitHubUsername
 
 neofetch --ascii $DOTFILES\.config\neofetch\ascii\windows_small.txt
 
-Write-Host $Configs.WelcomeText
+if ($Configs.EnableWelcomeText) {
+    Write-Host $Configs.WelcomeText
+}
 
 Import-Module -Name $PSModuleFolder\New-Symlink.psm1
 Import-Module -Name $PSModuleFolder\library.psm1
