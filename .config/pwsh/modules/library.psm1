@@ -69,8 +69,19 @@ function Get-GitCommitCount {
     Write-Host "The number of commits in the current branch is $gitCommitCount"
 }
 
+function Get-CharacterCount {
+    Param (
+        [Parameter(Mandatory=$true, HelpMessage="The string to count characters from.")]
+        [string]$String
+    )
+
+    $charCount = $String.Length
+    Write-Host "The number of characters in the string is $charCount"
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
 Export-ModuleMember -Function Open-StartupFolder
 Export-ModuleMember -Function Get-GitCommitCount
+Export-ModuleMember -Function Get-CharacterCount
