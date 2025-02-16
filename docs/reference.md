@@ -42,3 +42,7 @@
 ## Powershell
 
 - [PSScriptAnalyzer Rules](https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/rules/readme?view=ps-modules)
+
+## VS Code
+
+- [Theme API](https://code.visualstudio.com/api/references/theme-color)

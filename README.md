@@ -4,17 +4,11 @@ My Windows configuration files.
 
 ## Screenshot
 
-![Ubuntu WSL](/bin/screenshots/ubuntu.png)
+Thanks [ChadCat5207](https://www.reddit.com/r/unixporn/comments/1ipddtk/awesome_old_rice_i_never_posted) for the inspiration! I love it!
 
-Running Ubuntu WSL inside a multiplexed Windows Terminal.
+![Ubuntu WSL](/bin/screenshots/screenshot-1.png)
 
-![Other programs](/bin/screenshots/window.png)
-
-Running Spotify, wezterm and Neovim inside Windows Host.
-
-![PowerToys Run](/bin/screenshots/run.png)
-
-Launching application with PowerToys Run.
+![Other programs](/bin/screenshots/screenshot-2.png)
 
 ## Summary
 
@@ -28,12 +22,13 @@ Here is a summary of the tools I use.
 - **WSL**: Ubuntu, Debian
 - **Font**: CaskaydiaMono Nerd Font
 - **Launcher**: PowerToys Run
-- **Text editor**: Neovim, Emacs, Notepad++, VS Code
+- **Text editor**: Neovim, Emacs, Notepad++, VS Code, Cursor
 - **Fetch**: neofetch, fastfetch
 - **IDE**: Visual Studio 2022
 - **VM**: VirtualBox, Vagrant
 - **Package manager**: Scoop, Chocolatey
 - **Browser**: Firefox, Arc
+- **Flyout**: Modern Flyout
 
 ## Installation
 

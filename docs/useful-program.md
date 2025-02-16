@@ -48,6 +48,7 @@
 - [ ] bun
 - [ ] Notepad++
 - [ ] WezTerm
+- [ ] Cursor
 - [ ] [PowerToys](https://github.com/microsoft/PowerToys)
 - [ ] [Arc](https://arc.net)
 - [ ] [CMake](https://cmake.org/)
