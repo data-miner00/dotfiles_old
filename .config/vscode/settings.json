@@ -1,7 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.colorTheme": "Default Dark+ Experimental",
   "d.dubCompiler": "dmd.EXE",
   "d.stdlibPath": "auto",
   "d.dubPath": "C:\\D\\dmd2\\windows\\bin64\\dub.exe",
@@ -25,10 +24,24 @@
   "vim.vimrc.enable": true,
   "vim.leader": " ",
   "window.commandCenter": false,
-  "prisma.showPrismaDataPlatformNotification": false,
   "files.associations": {
     "*.html": "html"
   },
   "discord.enabled": false,
-  "editor.formatOnSave": true
+  "editor.fontFamily": "'CaskaydiaMono Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorCustomizations": {
+    "button.background": "#eba0ac",
+    "button.hoverBackground": "#d38e9a",
+    "badge.background": "#eba0ac",
+    "badge.foreground": "#fff",
+    "textLink.foreground": "#e68b9a",
+    "textLink.activeForeground": "#c97180",
+    "statusBarItem.remoteBackground": "#eba0ac",
+    "statusBarItem.activeBackground": "#d38e9a",
+    "activityBarBadge.background": "#eba0ac",
+    "activityBar.activeBorder": "#eba0ac",
+    "tab.activeBorderTop": "#c97180"
+  }
 }

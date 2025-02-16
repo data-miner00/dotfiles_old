@@ -20,7 +20,8 @@
   --blue: #89b4fa;
   --lavender: #b4befe;
 
-  --accent-color: var(--sky);
+  --accent-color: var(--maroon);
+  --text-color: rgb(0 0 0 / 90%);
 }
 
 i {
@@ -29,7 +30,7 @@ i {
 }
 
 body {
-  color: rgb(255 255 255 / 90%);
+  color: var(--text-color);
   font-family: ui-monospace, monospace;
   font-size: 12px;
   overflow: hidden;
@@ -42,8 +43,6 @@ body,
 }
 
 #root {
-  /* border-bottom: 1px solid rgb(255 255 255 / 5%); */
-  /* background: linear-gradient(rgb(0 0 0 / 75%), rgb(5 2 20 / 65%)); */
   background: transparent;
 }
 
@@ -52,7 +51,7 @@ body,
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 100%;
-  padding: 4px 1.5vw;
+  padding: 0px 20px;
 }
 
 .left,
@@ -63,14 +62,36 @@ body,
 
   /* prevent child items to expand over their allocated space */
   min-width: 0;
+
+  background-color: rgb(255 255 255 / 90%);
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.left {
+  justify-self: start;
+  padding: 6px 1.5vw;
 }
 
 .center {
   justify-self: center;
+  padding: 9px 1.5vw;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  & > * {
+    display: block;
+  }
+
+  span {
+    padding-top: 2px;
+  }
 }
 
 .right {
   justify-self: end;
+  padding: 6px 1.5vw;
 }
 
 .logo,
@@ -92,9 +113,8 @@ body,
   background: rgb(255 255 255 / 5%);
   margin-right: 4px;
   padding: 6px 6px 2px;
-  color: rgb(255 255 255 / 90%);
   border: none;
-  border-radius: 999px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.4s ease;
 
@@ -105,6 +125,7 @@ body,
   &.focused,
   &:hover {
     background: var(--accent-color);
+    color: white;
   }
 }
 
@@ -113,14 +134,16 @@ body,
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 100%;
+  max-width: 70ch;
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(255 255 255 / 15%);
-  color: rgb(255 255 255 / 90%);
-  border-radius: 2px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 4px;
   line-height: 1;
   padding: 4px 8px;
   border: 0;

@@ -40,6 +40,8 @@
 
       createRoot(document.getElementById("root")).render(<App />);
 
+      const enableTilingModeButton = true;
+
       function toSentenceCase(str) {
         return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
       }
@@ -166,7 +168,14 @@
               )}
             </div>
 
-            <div className="center">{output.date?.formatted}</div>
+            <div className="center">
+              <i className="nf nf-md-clock_time_eight"></i>
+              {output.date?.formatted ? (
+                <span>{output.date.formatted}</span>
+              ) : (
+                <span>Sun 1 Jan 12&#58;00 am</span>
+              )}
+            </div>
 
             <div className="right">
               {output.glazewm && (
@@ -177,16 +186,18 @@
                     </button>
                   ))}
 
-                  <button
-                    className={`tiling-direction nf ${
-                      output.glazewm.tilingDirection === "horizontal"
-                        ? "nf-md-swap_horizontal"
-                        : "nf-md-swap_vertical"
-                    }`}
-                    onClick={() =>
-                      output.glazewm.runCommand("toggle-tiling-direction")
-                    }
-                  ></button>
+                  {enableTilingModeButton && (
+                    <button
+                      className={`tiling-direction nf ${
+                        output.glazewm.tilingDirection === "horizontal"
+                          ? "nf-md-swap_horizontal"
+                          : "nf-md-swap_vertical"
+                      }`}
+                      onClick={() =>
+                        output.glazewm.runCommand("toggle-tiling-direction")
+                      }
+                    ></button>
+                  )}
                 </>
               )}
 

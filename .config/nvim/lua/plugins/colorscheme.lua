@@ -9,7 +9,13 @@ return {
     local macchiato = "macchiato"
 
     require("catppuccin").setup({
-      flavour = macchiato,
+      flavour = latte,
+      color_overrides = {
+        latte = {
+          blue = "#eba0ac",
+          surface0 = "#eeeeee",
+        },
+      },
     })
     vim.cmd.colorscheme("catppuccin")
   end,

@@ -18,26 +18,50 @@ config.term = "xterm-256color" -- Set the terminal type
 -- config.default_domain = 'WSL:Ubuntu'
 config.font = wezterm.font("CaskaydiaMono Nerd Font")
 config.cell_width = 0.9
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1.0
 config.prefer_egl = true
-config.font_size = 18.0
+config.font_size = 12.0
 
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 20,
+  right = 20,
+  top = 20,
+  bottom = 20,
 }
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 
--- config.inactive_pane_hsb = {
--- 	saturation = 0.0,
--- 	brightness = 1.0,
--- }
+config.launch_menu = {
+  {
+    label = "PowerShell",
+    args = { 'powershell.exe', '-NoLogo' },
+  },
+  {
+    label = 'WSL Ubuntu',
+    -- The argument array to spawn.  If omitted the default program
+    -- will be used as described in the documentation above
+    args = { 'wsl.exe', '-d', 'Ubuntu' },
+
+    -- You can specify an alternative current working directory;
+    -- if you don't specify one then a default based on the OSC 7
+    -- escape sequence will be used (see the Shell Integration
+    -- docs), falling back to the home directory.
+    -- cwd = "/some/path"
+
+    -- You can override environment variables just for this command
+    -- by setting this here.  It has the same semantics as the main
+    -- set_environment_variables configuration option described above
+    -- set_environment_variables = { FOO = "bar" },
+  },
+}
+
+config.inactive_pane_hsb = {
+	saturation = 0.0,
+	brightness = 1.0,
+}
 
 -- color scheme toggling
 wezterm.on("toggle-colorscheme", function(window, pane)
@@ -53,7 +77,7 @@ end)
 -- keymaps
 config.keys = {
   {
-    key = "E",
+    key = "K",
     mods = "CTRL|SHIFT|ALT",
     action = wezterm.action.EmitEvent("toggle-colorscheme"),
   },
@@ -109,24 +133,39 @@ config.keys = {
       window:set_config_overrides(overrides)
     end),
   },
+  { key = 'l', mods = 'CTRL', action = wezterm.action.ShowLauncher },
+}
+
+config.mouse_bindings = {
+  {
+    event = { Drag = { streak = 1, button = 'Left' } },
+    mods = 'SUPER',
+    action = wezterm.action.StartWindowDrag,
+  },
+  {
+    event = { Drag = { streak = 1, button = 'Left' } },
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.StartWindowDrag,
+  },
 }
 
 -- For example, changing the color scheme:
-config.color_scheme = "Cloud (terminal.sexy)"
+config.color_scheme = "Alabaster"
 config.colors = {
   -- background = '#3b224c',
   -- background = "#181616", -- vague.nvim bg
   -- background = "#080808", -- almost black
-  background = "#0c0b0f", -- dark purple
+  -- background = "#0c0b0f", -- dark purple
   -- background = "#020202", -- dark purple
   -- background = "#17151c", -- brighter purple
   -- background = "#16141a",
   -- background = "#0e0e12", -- bright washed lavendar
   -- background = 'rgba(59, 34, 76, 100%)',
-  cursor_border = "#bea3c7",
+  -- cursor_border = "#bea3c7",
   -- cursor_fg = "#281733",
-  cursor_bg = "#bea3c7",
+  cursor_bg = "#eba0ac",
   -- selection_fg = '#281733',
+  selection_bg = "#eba0ac",
 
   tab_bar = {
     background = "#0c0b0f",
