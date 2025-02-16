@@ -64,7 +64,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: *sky
+      color: *maroon
 
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
@@ -114,15 +114,33 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
-  - name: '일'
-  - name: '이'
-  - name: '삼'
-  - name: '사'
-  - name: '오'
-  - name: '육'
-  - name: '칠'
-  - name: '팔'
-  - name: '구'
+  - name: '1'
+    display_name: '일'
+    keep_alive: true
+  - name: '2'
+    display_name: '이'
+    keep_alive: true
+  - name: '3'
+    display_name: '삼'
+    keep_alive: true
+  - name: '4'
+    display_name: '사'
+    keep_alive: true
+  - name: '5'
+    display_name: '오'
+    keep_alive: true
+  - name: '6'
+    display_name: '육'
+    keep_alive: false
+  - name: '7'
+    display_name: '칠'
+    keep_alive: false
+  - name: '8'
+    display_name: '팔'
+    keep_alive: false
+  - name: '9'
+    display_name: '구'
+    keep_alive: false
 
 window_rules:
   - commands: ['ignore']
@@ -267,23 +285,23 @@ keybindings:
     bindings: ['alt+d', 'alt+tab']
 
   # Change focus to a workspace defined in `workspaces` config.
-  - commands: ['focus --workspace 일']
+  - commands: ['focus --workspace 1']
     bindings: ['alt+1']
-  - commands: ['focus --workspace 이']
+  - commands: ['focus --workspace 2']
     bindings: ['alt+2']
-  - commands: ['focus --workspace 삼']
+  - commands: ['focus --workspace 3']
     bindings: ['alt+3']
-  - commands: ['focus --workspace 사']
+  - commands: ['focus --workspace 4']
     bindings: ['alt+4']
-  - commands: ['focus --workspace 오']
+  - commands: ['focus --workspace 5']
     bindings: ['alt+5']
-  - commands: ['focus --workspace 육']
+  - commands: ['focus --workspace 6']
     bindings: ['alt+6']
-  - commands: ['focus --workspace 칠']
+  - commands: ['focus --workspace 7']
     bindings: ['alt+7']
-  - commands: ['focus --workspace 팔']
+  - commands: ['focus --workspace 8']
     bindings: ['alt+8']
-  - commands: ['focus --workspace 구']
+  - commands: ['focus --workspace 9']
     bindings: ['alt+9']
 
   # Move the focused window's parent workspace to a monitor in a given
@@ -298,21 +316,21 @@ keybindings:
     bindings: ['alt+shift+s']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace 일', 'focus --workspace 일']
+  - commands: ['move --workspace 1', 'focus --workspace 1']
     bindings: ['alt+shift+1']
-  - commands: ['move --workspace 이', 'focus --workspace 이']
+  - commands: ['move --workspace 2', 'focus --workspace 2']
     bindings: ['alt+shift+2']
-  - commands: ['move --workspace 삼', 'focus --workspace 삼']
+  - commands: ['move --workspace 3', 'focus --workspace 3']
     bindings: ['alt+shift+3']
-  - commands: ['move --workspace 사', 'focus --workspace 사']
+  - commands: ['move --workspace 4', 'focus --workspace 4']
     bindings: ['alt+shift+4']
-  - commands: ['move --workspace 오', 'focus --workspace 오']
+  - commands: ['move --workspace 5', 'focus --workspace 5']
     bindings: ['alt+shift+5']
-  - commands: ['move --workspace 육', 'focus --workspace 육']
+  - commands: ['move --workspace 6', 'focus --workspace 6']
     bindings: ['alt+shift+6']
-  - commands: ['move --workspace 칠', 'focus --workspace 칠']
+  - commands: ['move --workspace 7', 'focus --workspace 7']
     bindings: ['alt+shift+7']
-  - commands: ['move --workspace 팔', 'focus --workspace 팔']
+  - commands: ['move --workspace 8', 'focus --workspace 8']
     bindings: ['alt+shift+8']
-  - commands: ['move --workspace 구', 'focus --workspace 구']
+  - commands: ['move --workspace 9', 'focus --workspace 9']
     bindings: ['alt+shift+9']
