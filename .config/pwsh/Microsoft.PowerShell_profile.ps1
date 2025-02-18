@@ -13,6 +13,15 @@ if ($Configs.EnableWelcomeText) {
     Write-Host $Configs.WelcomeText
 }
 
+if ($Configs.Theme -eq "light") {
+    $ConsoleColorOverrides = @{
+        Number = 'DarkGray'
+        Member = 'DarkGray'
+    }
+
+    Set-PSReadLineOption -Colors $ConsoleColorOverrides
+}
+
 Import-Module -Name $PSModuleFolder\New-Symlink.psm1
 Import-Module -Name $PSModuleFolder\library.psm1
 Import-Module -Name $PSModuleFolder\Format-PowerShellFile.psm1
