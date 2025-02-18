@@ -20,7 +20,7 @@
 function Open-GenAI {
     param (
         [Parameter(Mandatory=$false)]
-        [ValidateSet("chatgpt", "gemini", "claude", "copilot")]
+        [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek")]
         [string]$provider = "chatgpt",
 
         [Parameter(Mandatory=$false)]
@@ -33,6 +33,7 @@ function Open-GenAI {
         "gemini" = "https://gemini.google.com/app"
         "claude" = "https://claude.ai/new"
         "copilot" = "https://copilot.microsoft.com"
+        "deepseek" = "https://chat.deepseek.com"
     }
 
     if ($random) {
