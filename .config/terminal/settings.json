@@ -97,7 +97,7 @@
         "list": 
         [
             {
-                "colorScheme": "One Half Dark",
+                "colorScheme": "One Half Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -107,8 +107,7 @@
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell",
-                "opacity": 80
+                "name": "Windows PowerShell"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -193,6 +192,7 @@
     "showTabsInTitlebar": true,
     "startOnUserLogin": true,
     "tabSwitcherMode": "inOrder",
+    "theme": "light",
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }

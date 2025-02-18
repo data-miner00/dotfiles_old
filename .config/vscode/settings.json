@@ -42,6 +42,9 @@
     "statusBarItem.activeBackground": "#d38e9a",
     "activityBarBadge.background": "#eba0ac",
     "activityBar.activeBorder": "#eba0ac",
-    "tab.activeBorderTop": "#c97180"
+    "tab.activeBorderTop": "#c97180",
+    "terminalCursor.foreground": "#eba0ac",
+    "editorGroup.dropBackground": "#eba0ac22",
+    "editor.selectionBackground": "#eba0ac55"
   }
 }
