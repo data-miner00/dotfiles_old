@@ -25,7 +25,8 @@ Variables used for configuring my PowerShell profile.
             "wezterm",
             "cmake",
             "make",
-            "fastfetch"
+            "fastfetch",
+            "windirstat"
         )
     }
 }
