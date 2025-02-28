@@ -35,6 +35,9 @@
     20. Clojars
     21. Open Source Insights (deps)
     22. D Package registry (dub)
+    23. RubyGems
+    24. JuliaHub
+    25. Packagist
 
     AI:
     1. Kaggle

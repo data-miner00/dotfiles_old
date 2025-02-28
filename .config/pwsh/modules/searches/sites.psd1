@@ -30,6 +30,9 @@
     clojars = "https://clojars.org/search?q="
     deps = "https://deps.dev/search?q="
     dub = "https://code.dlang.org/search?q="
+    rubygems = "https://rubygems.org/search?query="
+    julia = "https://juliahub.com/ui/Search?q="
+    packagist = "https://packagist.org/?query="
     
     # AI
     kaggle = "https://www.kaggle.com/search?q="
