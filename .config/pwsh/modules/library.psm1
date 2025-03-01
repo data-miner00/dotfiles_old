@@ -79,9 +79,38 @@ function Get-CharacterCount {
     Write-Host "The number of characters in the string is $charCount"
 }
 
+function Get-Uptime {
+    (Get-Date) - (Get-CimInstance -ClassName Win32_OperatingSystem).LastBootUpTime
+}
+
+function Search-History {
+    Param([string]$searchTerm)
+    Get-History | Where-Object { $_.CommandLine -like "*$searchTerm*" }
+}
+
+function Copy-Path {
+    Set-Clipboard -Value (Get-Location).Path
+}
+
+function Test-ConnectionQuick {
+    Test-Connection -ComputerName "google.com" -Count 2
+}
+
+function New-RandomPassword {
+    Param([int]$Length = 12)
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"
+    $password = -join (1..$Length | ForEach-Object { $chars[(Get-Random -Minimum 0 -Maximum $chars.Length)] })
+    return $password
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
 Export-ModuleMember -Function Open-StartupFolder
 Export-ModuleMember -Function Get-GitCommitCount
 Export-ModuleMember -Function Get-CharacterCount
+Export-ModuleMember -Function Get-Uptime
+Export-ModuleMember -Function Search-History
+Export-ModuleMember -Function Copy-Path
+Export-ModuleMember -Function Test-ConnectionQuick
+Export-ModuleMember -Function New-RandomPassword

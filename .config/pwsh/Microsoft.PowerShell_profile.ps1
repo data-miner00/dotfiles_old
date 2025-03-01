@@ -56,7 +56,7 @@ function reason {
 }
 
 function ip {
-    (Invoke-WebRequest ifconfig.me).Content
+    (Invoke-WebRequest ifconfig.me/ip).Content
 }
 
 function weather {
