@@ -14,6 +14,7 @@
         "Get-FreeDiskSpace",
         "Amalgamate-Search",
         "Open-GenAI",
-        "Show-MultiplicationTable"
+        "Show-MultiplicationTable",
+        "Convert-Colors"
     )
 }

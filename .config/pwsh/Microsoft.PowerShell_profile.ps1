@@ -37,6 +37,7 @@ Import-Module -Name $PSModuleFolder\Get-FreeDiskSpace.psm1
 Import-Module -Name $PSModuleFolder\Amalgamate-Search.psm1 -DisableNameChecking
 Import-Module -Name $PSModuleFolder\Open-GenAI.psm1
 Import-Module -Name $PSModuleFolder\Show-MultiplicationTable.psm1
+Import-Module -Name $PSModuleFolder\Convert-Colors.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe

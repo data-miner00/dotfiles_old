@@ -26,7 +26,8 @@ Variables used for configuring my PowerShell profile.
             "cmake",
             "make",
             "fastfetch",
-            "windirstat"
+            "windirstat",
+            "zig"
         )
     }
 }
