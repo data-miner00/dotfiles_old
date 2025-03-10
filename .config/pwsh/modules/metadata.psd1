@@ -15,6 +15,7 @@
         "Amalgamate-Search",
         "Open-GenAI",
         "Show-MultiplicationTable",
-        "Convert-Colors"
+        "Convert-Colors",
+        "Modify-TempEnv"
     )
 }
