@@ -5,9 +5,10 @@
         "duckduckgo",
         "qwant"
     )
-    Code = @(
+    Code    = @(
         "github",
         "gitlab",
         "codeberg"
     )
 }
+

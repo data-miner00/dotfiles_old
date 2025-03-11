@@ -12,7 +12,7 @@
 #>
 function Get-EnvironmentVariables {
     Param (
-        [Parameter(Mandatory=$false, HelpMessage="The name of the environment variable.")]
+        [Parameter(Mandatory = $false, HelpMessage = "The name of the environment variable.")]
         [string]$Name
     )
 
@@ -25,3 +25,4 @@ function Get-EnvironmentVariables {
 }
 
 Export-ModuleMember -Function Get-EnvironmentVariables
+

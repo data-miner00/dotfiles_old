@@ -21,11 +21,11 @@
 #>
 function Open-GitHubRepository2 {
     param (
-        [Parameter(Mandatory=$true, HelpMessage="The recognized repository name shorthand.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The recognized repository name shorthand.")]
         [ValidateSet("p", "n", "d", "do", "l", "s", "ss", "k", "c", "b")]
         [string]$Shorthand,
 
-        [Parameter(Mandatory=$false, HelpMessage="Whether opens the Pull Requests' page")]
+        [Parameter(Mandatory = $false, HelpMessage = "Whether opens the Pull Requests' page")]
         [Alias("PR")]
         [switch]$PullRequest
     )
@@ -35,23 +35,25 @@ function Open-GitHubRepository2 {
     }
 
     $MyRepositoryMappings = @{
-        p = "sandbox.ps1"
-        n = "nixbox"
-        d = "dotfiles"
+        p  = "sandbox.ps1"
+        n  = "nixbox"
+        d  = "dotfiles"
         do = "dotfiles_old"
-        l = "Linker"
-        s = "Sway"
+        l  = "Linker"
+        s  = "Sway"
         ss = "Screenshot"
-        k = "KeyLogger"
-        c = "custom-lang"
-        b = "bot"
+        k  = "KeyLogger"
+        c  = "custom-lang"
+        b  = "bot"
     }
 
     if ($PullRequest) {
         Start-Process https://github.com/$GitHubUsername/$($MyRepositoryMappings[$Shorthand])/pulls
-    } else {
+    }
+    else {
         Start-Process https://github.com/$GitHubUsername/$($MyRepositoryMappings[$Shorthand])
     }
 }
 
 Export-ModuleMember -Function Open-GitHubRepository2
+

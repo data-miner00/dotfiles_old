@@ -11,7 +11,7 @@
 #>
 function Open-GitHubRepository {
     Param(
-        [Parameter(Mandatory=$true, HelpMessage="The repository name on GitHub.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The repository name on GitHub.")]
         [string]$RepositoryName
     )
 
@@ -25,3 +25,4 @@ function Open-GitHubRepository {
 }
 
 Export-ModuleMember -Function Open-GitHubRepository
+

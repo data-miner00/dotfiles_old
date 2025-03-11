@@ -12,3 +12,4 @@ function Get-Colors {
 
 Export-ModuleMember -Function Show-Colors
 Export-ModuleMember -Function Get-Colors
+

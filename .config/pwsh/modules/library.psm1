@@ -1,9 +1,9 @@
 function Write-Hello {
     Param(
-        [Parameter(Mandatory=$true, HelpMessage="What is your name?")]
+        [Parameter(Mandatory = $true, HelpMessage = "What is your name?")]
         [string]$Name,
 
-        [Parameter(Mandatory=$true, HelpMessage="How old are you?")]
+        [Parameter(Mandatory = $true, HelpMessage = "How old are you?")]
         [int]$Age
     )
 
@@ -12,7 +12,7 @@ function Write-Hello {
 
 function Switch-Location {
     Param (
-        [Parameter(Mandatory=$true, HelpMessage="The location to move to.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The location to move to.")]
         [ValidateSet("dl", "ws", "home", "vs", "p")]
         [string]$Location
     )
@@ -43,7 +43,7 @@ function Switch-Location {
 function Switch-PreviousLocation {
     Param (
         [ValidateRange(1, 3)]
-        [Parameter(Mandatory=$false, HelpMessage="The level of directories to return to.")]
+        [Parameter(Mandatory = $false, HelpMessage = "The level of directories to return to.")]
         [int]$Levels = 1
     )
 
@@ -71,7 +71,7 @@ function Get-GitCommitCount {
 
 function Get-CharacterCount {
     Param (
-        [Parameter(Mandatory=$true, HelpMessage="The string to count characters from.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The string to count characters from.")]
         [string]$String
     )
 
@@ -114,3 +114,4 @@ Export-ModuleMember -Function Search-History
 Export-ModuleMember -Function Copy-Path
 Export-ModuleMember -Function Test-ConnectionQuick
 Export-ModuleMember -Function New-RandomPassword
+

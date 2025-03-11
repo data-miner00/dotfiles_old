@@ -86,8 +86,8 @@ function Amalgamate-Search {
             Start-Process $($searchUrl + $searchQueries)
         }
 
-    # Single search
-    } else {
+    }
+    else { # Single search
         $searchQueries = [uri]::EscapeDataString([string]::Join(" ", $($args | Select-Object -Skip 1)))
         $searchUrl = $SearchSites[$searchTarget]
         Start-Process $($searchUrl + $searchQueries)
@@ -95,3 +95,4 @@ function Amalgamate-Search {
 }
 
 Export-ModuleMember -Function Amalgamate-Search
+

@@ -1,39 +1,39 @@
 <#
 .Synopsis
-  Displays a visual representation of a calendar.
+    Displays a visual representation of a calendar.
 
 .Description
-  Displays a visual representation of a calendar. This function supports multiple months
-  and lets you highlight specific date ranges or days.
+    Displays a visual representation of a calendar. This function supports multiple months
+    and lets you highlight specific date ranges or days.
 
 .Parameter Start
-  The first month to display.
+    The first month to display.
 
 .Parameter End
-  The last month to display.
+    The last month to display.
 
 .Parameter FirstDayOfWeek
-  The day of the month on which the week begins.
+    The day of the month on which the week begins.
 
 .Parameter HighlightDay
-  Specific days (numbered) to highlight. Used for date ranges like (25..31).
-  Date ranges are specified by the Windows PowerShell range syntax. These dates are
-  enclosed in square brackets.
+    Specific days (numbered) to highlight. Used for date ranges like (25..31).
+    Date ranges are specified by the Windows PowerShell range syntax. These dates are
+    enclosed in square brackets.
 
 .Parameter HighlightDate
-  Specific days (named) to highlight. These dates are surrounded by asterisks.
+    Specific days (named) to highlight. These dates are surrounded by asterisks.
 
 .Example
-   # Show a default display of this month.
-   Show-Calendar
+    # Show a default display of this month.
+    Show-Calendar
 
 .Example
-   # Display a date range.
-   Show-Calendar -Start "March, 2010" -End "May, 2010"
+    # Display a date range.
+    Show-Calendar -Start "March, 2010" -End "May, 2010"
 
 .Example
-   # Highlight a range of days.
-   Show-Calendar -HighlightDay (1..10 + 22) -HighlightDate "2008-12-25"
+    # Highlight a range of days.
+    Show-Calendar -HighlightDay (1..10 + 22) -HighlightDate "2008-12-25"
 #>
 function Show-Calendar {
     param(
@@ -132,3 +132,4 @@ function Show-Calendar {
 }
 
 Export-ModuleMember -Function Show-Calendar
+

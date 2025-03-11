@@ -18,10 +18,10 @@
 #>
 function Get-FreeDiskSpace {
     param (
-        [Parameter(Mandatory=$false, HelpMessage="The disk drive letter.")]
+        [Parameter(Mandatory = $false, HelpMessage = "The disk drive letter.")]
         [string]$DiskLetter = "C",
 
-        [Parameter(Mandatory=$false, HelpMessage="Display unit.")]
+        [Parameter(Mandatory = $false, HelpMessage = "Display unit.")]
         [string]$DisplayUnit = "kb"
     )
 
@@ -48,9 +48,11 @@ function Get-FreeDiskSpace {
                 Write-Error "Unrecognized unit '$DisplayUnit'"
             }
         }
-    } else {
+    }
+    else {
         Write-Error "Drive $DiskLetter not found."
     }
 }
 
 Export-ModuleMember -Function Get-FreeDiskSpace
+

@@ -17,7 +17,7 @@
 function Prune-LocalBranch {
     [CmdletBinding(ConfirmImpact = 'High', SupportsShouldProcess)]
     Param (
-        [Parameter(Mandatory=$false, HelpMessage="The name of the default branch so that it will not be deleted")]
+        [Parameter(Mandatory = $false, HelpMessage = "The name of the default branch so that it will not be deleted")]
         [string]$DefaultBranchName = "master"
     )
 
@@ -32,7 +32,7 @@ function Prune-LocalBranch {
         Write-Host "Checked out to branch '$DefaultBranchName'"
 
         if ($PSCmdlet.ShouldProcess("Prune unused local branches")) {
-            git branch -D @(git branch | Select-String -NotMatch $DefaultBranchName | ForEach-Object {$_.Line.Trim()})
+            git branch -D @(git branch | Select-String -NotMatch $DefaultBranchName | ForEach-Object { $_.Line.Trim() })
             Write-Host "Pruned local branches besides '$DefaultBranchName'"
         }
 
@@ -49,3 +49,4 @@ function Prune-LocalBranch {
 }
 
 Export-ModuleMember -Function Prune-LocalBranch
+

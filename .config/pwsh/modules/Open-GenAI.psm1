@@ -19,20 +19,20 @@
 #>
 function Open-GenAI {
     param (
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory = $false)]
         [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek")]
         [string]$provider = "chatgpt",
 
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory = $false)]
         [Alias("r")]
         [switch]$random
     )
 
     $Providers = @{
-        "chatgpt" = "https://chatgpt.com"
-        "gemini" = "https://gemini.google.com/app"
-        "claude" = "https://claude.ai/new"
-        "copilot" = "https://copilot.microsoft.com"
+        "chatgpt"  = "https://chatgpt.com"
+        "gemini"   = "https://gemini.google.com/app"
+        "claude"   = "https://claude.ai/new"
+        "copilot"  = "https://copilot.microsoft.com"
         "deepseek" = "https://chat.deepseek.com"
     }
 
@@ -47,3 +47,4 @@ function Open-GenAI {
 }
 
 Export-ModuleMember -Function Open-GenAI
+

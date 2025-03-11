@@ -13,7 +13,7 @@
 #>
 function Show-MultiplicationTable {
     Param (
-        [Parameter(Mandatory=$False)]
+        [Parameter(Mandatory = $False)]
         [int]$Max = 12
     )
     
@@ -24,7 +24,7 @@ function Show-MultiplicationTable {
             Write-Host -NoNewline "$($Num * $Num2)".PadLeft($padLength, ' ')
 
             If ($Num2 -eq 1) {
-                Write-Host -NoNewLine " | "
+                Write-Host -NoNewline " | "
             }
         }
 
@@ -38,3 +38,4 @@ function Show-MultiplicationTable {
 }
 
 Export-ModuleMember -Function Show-MultiplicationTable
+

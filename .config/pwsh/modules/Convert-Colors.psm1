@@ -1,12 +1,12 @@
 function RGBToHex {
     param (
-        [Parameter(Mandatory=$true, Position=0, HelpMessage="The red value")]
+        [Parameter(Mandatory = $true, Position = 0, HelpMessage = "The red value")]
         [int]$Red,
 
-        [Parameter(Mandatory=$true, Position=1, HelpMessage="The green value")]
+        [Parameter(Mandatory = $true, Position = 1, HelpMessage = "The green value")]
         [int]$Green,
 
-        [Parameter(Mandatory=$true, Position=2, HelpMessage="The blue value")]
+        [Parameter(Mandatory = $true, Position = 2, HelpMessage = "The blue value")]
         [int]$Blue
     )
 
@@ -15,10 +15,10 @@ function RGBToHex {
 
 function HexToRGB {
     param (
-        [Parameter(Mandatory=$true, HelpMessage="The hex value")]
+        [Parameter(Mandatory = $true, HelpMessage = "The hex value")]
         [string]$Hex,
 
-        [Parameter(Mandatory=$false, HelpMessage="Whether to print it in CSS")]
+        [Parameter(Mandatory = $false, HelpMessage = "Whether to print it in CSS")]
         [switch]$Css = $false
     )
 
@@ -29,11 +29,12 @@ function HexToRGB {
     }
     else {
         [PSCustomObject]@{
-            Red = [Convert]::ToInt32($Hex.Substring(0, 2), 16)
+            Red   = [Convert]::ToInt32($Hex.Substring(0, 2), 16)
             Green = [Convert]::ToInt32($Hex.Substring(2, 2), 16)
-            Blue = [Convert]::ToInt32($Hex.Substring(4, 2), 16)
+            Blue  = [Convert]::ToInt32($Hex.Substring(4, 2), 16)
         }
     }
 }
 
 Export-ModuleMember -Function RGBToHex, HexToRGB
+

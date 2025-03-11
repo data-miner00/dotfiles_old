@@ -11,7 +11,7 @@
 #>
 function Add-TempEnv {
     Param (
-        [Parameter(Mandatory=$true, HelpMessage="The temporary environment path.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The temporary environment path.")]
         [string]$Path
     )
 
@@ -34,7 +34,7 @@ function Add-TempEnv {
 function Remove-TempEnv {
     [CmdletBinding()]
     Param (
-        [Parameter(Mandatory=$true, HelpMessage="The environment path loaded in the current session to be removed.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The environment path loaded in the current session to be removed.")]
         [string]$Path
     )
 
@@ -63,7 +63,7 @@ function Remove-TempEnv {
 #>
 function Remove-TempEnv2 {
     Param (
-        [Parameter(Mandatory=$true, HelpMessage="The environment path loaded in the current session to be removed.")]
+        [Parameter(Mandatory = $true, HelpMessage = "The environment path loaded in the current session to be removed.")]
         [string]$Path
     )
 
@@ -73,3 +73,4 @@ function Remove-TempEnv2 {
 }
 
 Export-ModuleMember Add-TempEnv, Remove-TempEnv, Remove-TempEnv2
+

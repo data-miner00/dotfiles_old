@@ -14,7 +14,8 @@ function Push-GitTag {
     if ($(git tag --list) -like "*$Version*") {
         if ($Force -eq $false) {
             throw "The tag '$Version' already exist."
-        } else {
+        }
+        else {
             Write-Warning "The tag '$Version' exists. Forcing push.."
         }
     }
@@ -23,7 +24,8 @@ function Push-GitTag {
 
     if ($UseRecommended) {
         git push origin tag $Version
-    } else {
+    }
+    else {
         # not recommended as this will push all tags
         git push --tags
     }
@@ -32,3 +34,4 @@ function Push-GitTag {
 }
 
 Export-ModuleMember -Function Push-GitTag
+

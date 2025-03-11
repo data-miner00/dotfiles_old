@@ -22,13 +22,13 @@
 #>
 function Format-PowerShellFile {
     param (
-        [Parameter(Mandatory=$true, HelpMessage="The path to the file")]
+        [Parameter(Mandatory = $true, HelpMessage = "The path to the file")]
         [string]$FilePath,
 
-        [Parameter(Mandatory=$false, HelpMessage="Whether to print out the formatted content or not")]
+        [Parameter(Mandatory = $false, HelpMessage = "Whether to print out the formatted content or not")]
         [switch]$PrintOriginal,
 
-        [Parameter(Mandatory=$false, HelpMessage="Preview the changes instead of commiting the changes.")]
+        [Parameter(Mandatory = $false, HelpMessage = "Preview the changes instead of commiting the changes.")]
         [switch]$Preview
     )
 
@@ -56,3 +56,4 @@ function Format-PowerShellFile {
     $formatted | Set-Content -Path $FilePath
     Write-Host "[ok] Formatted '$FilePath'"
 }
+

@@ -32,7 +32,7 @@ function Search-Google2 {
 
 function Search-GoogleSession {
     param (
-        [Parameter(Mandatory=$false, HelpMessage="The custom prompt")]
+        [Parameter(Mandatory = $false, HelpMessage = "The custom prompt")]
         [string]$Prompt = "> "
     )
 
@@ -55,3 +55,4 @@ function Search-GoogleSession {
 Export-ModuleMember -Function Search-Google
 Export-ModuleMember -Function Search-Google2
 Export-ModuleMember -Function Search-GoogleSession
+
