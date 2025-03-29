@@ -42,6 +42,7 @@
     AI:
     1. Kaggle
     2. Hugging Face (hugging)
+    3. MCP
 
     Socials:
     1. GitHub

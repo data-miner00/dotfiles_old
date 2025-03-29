@@ -37,6 +37,7 @@
     # AI
     kaggle     = "https://www.kaggle.com/search?q="
     hugging    = "https://huggingface.co/search/full-text?q="
+    mcp        = "https://mcp.so/?q="
     
     # Socials
     github     = "https://github.com/search?type=repositories&q="
