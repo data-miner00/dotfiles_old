@@ -6,7 +6,7 @@
     Able to select which GenAI website to open.
 
 .PARAMETER $provider
-    The GenAI provider. Defaults to `chatgpt`. Other available options are `gemini`, `claude`, `copilot`, `deepseek`, `perplexity` and `grok`.
+    The GenAI provider. Defaults to `chatgpt`. Other available options are `gemini`, `claude`, `copilot`, `deepseek`, `perplexity`, `grok` and `duck`.
 
 .PARAMETER $random
     Ignores the `$provider` parameter and opens a random GenAI provider.
@@ -20,7 +20,7 @@
 function Open-GenAI {
     param (
         [Parameter(Mandatory = $false)]
-        [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek", "perplexity", "grok")]
+        [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek", "perplexity", "grok", "duck")]
         [string]$provider = "chatgpt",
 
         [Parameter(Mandatory = $false)]
@@ -35,7 +35,8 @@ function Open-GenAI {
         "copilot"    = "https://copilot.microsoft.com"
         "deepseek"   = "https://chat.deepseek.com"
         "perplexity" = "https://www.perplexity.ai"
-        "grok"       = "https://x.com/i/grok"
+        "grok"       = "https://grok.com/" # "https://x.com/i/grok"
+        "duck"       = "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1"
     }
 
     if ($random) {
