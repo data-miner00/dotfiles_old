@@ -16,7 +16,8 @@
         "Open-GenAI",
         "Show-MultiplicationTable",
         "Convert-Colors",
-        "Modify-TempEnv"
+        "Modify-TempEnv",
+        "Get-PortProcess"
     )
 }
 

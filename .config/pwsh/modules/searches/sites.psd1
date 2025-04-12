@@ -6,6 +6,7 @@
     yahoo      = "https://search.yahoo.com/search?p="
     yandex     = "https://yandex.com/search/?text="
     qwant      = "https://www.qwant.com/?q="
+    baidu      = "https://www.baidu.com/s?wd="
 
     # Package repository
     scoop      = "https://scoop.sh/#/apps?q="
