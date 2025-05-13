@@ -41,6 +41,7 @@ Import-Module -Name $PSModuleFolder\Convert-Colors.psm1
 Import-Module -Name $PSModuleFolder\Modify-TempEnv.psm1 -DisableNameChecking
 Import-Module -Name $PSModuleFolder\Get-PortProcess.psm1
 Import-Module -Name $PSModuleFolder\Set-PreviousLocation.psm1
+Import-Module -Name $PSModuleFolder\keybinds.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe

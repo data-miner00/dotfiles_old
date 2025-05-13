@@ -18,7 +18,8 @@
         "Convert-Colors",
         "Modify-TempEnv",
         "Get-PortProcess",
-        "Set-PreviousLocation"
+        "Set-PreviousLocation",
+        "keybinds"
     )
 }
 
