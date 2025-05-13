@@ -40,6 +40,7 @@ Import-Module -Name $PSModuleFolder\Show-MultiplicationTable.psm1
 Import-Module -Name $PSModuleFolder\Convert-Colors.psm1
 Import-Module -Name $PSModuleFolder\Modify-TempEnv.psm1 -DisableNameChecking
 Import-Module -Name $PSModuleFolder\Get-PortProcess.psm1
+Import-Module -Name $PSModuleFolder\Set-PreviousLocation.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
@@ -53,6 +54,7 @@ Set-Alias -Name colors -Value Show-Colors
 Set-Alias -Name ".." -Value Switch-PreviousLocation
 Set-Alias -Name s -Value Amalgamate-Search
 Set-Alias -Name gen -Value Open-GenAI
+Set-Alias -Name back -Value Set-PreviousLocation
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.

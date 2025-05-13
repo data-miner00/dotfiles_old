@@ -17,7 +17,8 @@
         "Show-MultiplicationTable",
         "Convert-Colors",
         "Modify-TempEnv",
-        "Get-PortProcess"
+        "Get-PortProcess",
+        "Set-PreviousLocation"
     )
 }
 
