@@ -41,7 +41,7 @@ function Search-EnvironmentVariables {
     )
 
     Get-ChildItem Env: | Where-Object { $_.Name -like "*$Key*" } |
-    Sort-Object Name | Format-Table Name, Value -AutoSize
+        Sort-Object Name | Format-Table Name, Value -AutoSize
 }
 
 Export-ModuleMember -Function Get-EnvironmentVariables

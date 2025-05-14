@@ -14,7 +14,8 @@ function Set-PreviousLocation {
         $currentLocation = Get-Location
         Set-Location -Path $global:lastLocation
         $global:lastLocation = $currentLocation
-    } else {
+    }
+    else {
         Write-Host "No previous location stored." -ForegroundColor Yellow
     }
 }
@@ -28,3 +29,4 @@ $ExecutionContext.SessionState.InvokeCommand.PreCommandLookupAction = {
 }
 
 Export-ModuleMember -Function Set-PreviousLocation
+
