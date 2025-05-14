@@ -20,7 +20,8 @@
         "Get-PortProcess",
         "Set-PreviousLocation",
         "keybinds",
-        "Get-HistoryWithTimestamp"
+        "Get-HistoryWithTimestamp",
+        "aliases"
     )
 }
 

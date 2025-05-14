@@ -43,6 +43,7 @@ Import-Module -Name $PSModuleFolder\Get-PortProcess.psm1
 Import-Module -Name $PSModuleFolder\Set-PreviousLocation.psm1
 Import-Module -Name $PSModuleFolder\keybinds.psm1
 Import-Module -Name $PSModuleFolder\Get-HistoryWithTimestamp.psm1
+Import-Module -Name $PSModuleFolder\aliases.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
