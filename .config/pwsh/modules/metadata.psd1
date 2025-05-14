@@ -19,7 +19,8 @@
         "Modify-TempEnv",
         "Get-PortProcess",
         "Set-PreviousLocation",
-        "keybinds"
+        "keybinds",
+        "Get-HistoryWithTimestamp"
     )
 }
 
