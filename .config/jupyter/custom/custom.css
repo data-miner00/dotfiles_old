@@ -1,0 +1,53 @@
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  font-size: 12px;
+  text-transform: lowercase;
+
+  &::before {
+    content: "#";
+  }
+
+  &.blue {
+    background-color: #007bff;
+    color: white;
+  }
+
+  &.green {
+    background-color: #28a745;
+    color: white;
+  }
+
+  &.red {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  &.yellow {
+    background-color: #ffc107;
+    color: white;
+  }
+
+  &.purple {
+    background-color: #6f42c1;
+    color: white;
+  }
+
+  &.orange {
+    background-color: #fd7e14;
+    color: white;
+  }
+
+  &.pink {
+    background-color: #e83e8c;
+    color: white;
+  }
+}
