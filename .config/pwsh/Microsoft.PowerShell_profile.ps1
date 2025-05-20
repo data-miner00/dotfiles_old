@@ -59,6 +59,7 @@ Set-Alias -Name s -Value Amalgamate-Search
 Set-Alias -Name gen -Value Open-GenAI
 Set-Alias -Name back -Value Set-PreviousLocation
 Set-Alias -Name hist -Value Get-HistoryWithTimestamp
+Set-Alias -Name activate -Value './.venv/Scripts/activate'
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.

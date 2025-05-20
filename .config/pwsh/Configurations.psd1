@@ -27,7 +27,8 @@ Variables used for configuring my PowerShell profile.
             "make",
             "fastfetch",
             "windirstat",
-            "zig"
+            "zig",
+            "bun" # requires "vcredist2022"
         )
     }
 }
