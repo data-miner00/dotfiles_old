@@ -2,9 +2,9 @@
 function gs { git status }
 function ga { git add $args }
 function gaa { git add --all }
-function gc { git commit -m $args }
-function gp { git push }
-function gl { git pull }
+function gcommit { git commit -m $args }
+function gpush { git push }
+function gpull { git pull }
 function gd { git diff $args }
 function gb { git branch $args }
 function gco { git checkout $args }
