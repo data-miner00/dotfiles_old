@@ -103,6 +103,21 @@ function New-RandomPassword {
     return $password
 }
 
+function New-File {
+    Param(
+        [Parameter(Mandatory = $true, HelpMessage = "The name of the file to create.")]
+        [string]$FileName
+    )
+
+    if (-Not (Test-Path -Path $FileName)) {
+        New-Item -Path $FileName -ItemType File | Out-Null
+        # "" | Out-File $FileName -Encoding utf8
+        Write-Host "File '$FileName' created successfully."
+    } else {
+        Write-Host "File '$FileName' already exists."
+    }
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
@@ -114,4 +129,5 @@ Export-ModuleMember -Function Search-History
 Export-ModuleMember -Function Copy-Path
 Export-ModuleMember -Function Test-ConnectionQuick
 Export-ModuleMember -Function New-RandomPassword
+Export-ModuleMember -Function New-File
 
