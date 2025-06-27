@@ -19,7 +19,6 @@ Here is a summary of the tools I use.
 - **Shell**: PowerShell, bash, zsh
 - **Prompt**: Starship
 - **Terminal**: Windows Terminal, wezterm
-- **WSL**: Ubuntu, Debian
 - **Font**: CaskaydiaMono Nerd Font
 - **Launcher**: PowerToys Run
 - **Text editor**: Neovim, Emacs, Notepad++, VS Code, Cursor
@@ -36,6 +35,28 @@ Unfortunately, there are some components/software that needs to be installed man
 
 > [!NOTE]  
 > Installation steps are currently work in progress.
+
+## Vagrant
+
+Validate the syntax for Vagrantfile.
+
+```
+vagrant validate
+```
+
+## Formatting
+
+1. For Lua, use the `stylua` command against lua-containing folders.
+
+```
+stylua .config/nvim
+```
+
+2. For Powershell, use the `Format-PowerShellFile` command.
+
+```powershell
+Get-ChildItem .\.config\pwsh\modules\ | Where-Object { $_.Mode -eq "-a----" } | ForEach-Object { Format-PowerShellFile ".\.config\pwsh\modules\$_" }Get-ChildItem ".\.config\pwsh\modules" | Select-Object { $_.Name }
+```
 
 ## License
 
