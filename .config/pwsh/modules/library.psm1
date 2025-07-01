@@ -118,6 +118,39 @@ function New-File {
     }
 }
 
+function Convert-ToLowerCase {
+    Param(
+        [Parameter(Mandatory = $true, HelpMessage = "The string to convert to lower case.")]
+        [string]$String
+    )
+
+    return $String.ToLower()
+}
+
+function Convert-ToUpperCase {
+    Param(
+        [Parameter(Mandatory = $true, HelpMessage = "The string to convert to upper case.")]
+        [string]$String
+    )
+
+    return $String.ToUpper()
+}
+
+function Convert-ToTitleCase {
+    Param(
+        [Parameter(Mandatory = $true, HelpMessage = "The string to convert to title case.")]
+        [string]$String
+    )
+
+    return ($String -split ' ' | ForEach-Object {
+        if ($_.Length -gt 0) {
+            $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
+        } else {
+            $_
+        }
+    }) -join ' '
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
@@ -130,4 +163,7 @@ Export-ModuleMember -Function Copy-Path
 Export-ModuleMember -Function Test-ConnectionQuick
 Export-ModuleMember -Function New-RandomPassword
 Export-ModuleMember -Function New-File
+Export-ModuleMember -Function Convert-ToLowerCase
+Export-ModuleMember -Function Convert-ToUpperCase
+Export-ModuleMember -Function Convert-ToTitleCase
 

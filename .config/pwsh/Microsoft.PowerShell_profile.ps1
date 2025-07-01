@@ -61,6 +61,9 @@ Set-Alias -Name back -Value Set-PreviousLocation
 Set-Alias -Name hist -Value Get-HistoryWithTimestamp
 Set-Alias -Name activate -Value './.venv/Scripts/activate'
 Set-Alias -Name touch -Value New-Item
+Set-Alias -Name lower -Value Convert-ToLowerCase
+Set-Alias -Name upper -Value Convert-ToUpperCase
+Set-Alias -Name title -Value Convert-ToTitleCase
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
