@@ -180,11 +180,19 @@
             <div className="right">
               {output.glazewm && (
                 <>
-                  {output.glazewm.bindingModes.map((bindingMode) => (
-                    <button className="binding-mode" key={bindingMode.name}>
-                      {bindingMode.displayName ?? bindingMode.name}
-                    </button>
-                  ))}
+                  {output.glazewm.bindingModes.map((bindingMode) => {
+                    var modeIcon =
+                      (bindingMode.displayName ?? bindingMode.name) == "pause"
+                        ? "nf nf-fa-pause"
+                        : "nf nf-fa-stop";
+
+                    return (
+                      <button
+                        className={`binding-mode ${modeIcon}`}
+                        key={bindingMode.name}
+                      ></button>
+                    );
+                  })}
 
                   {enableTilingModeButton && (
                     <button
