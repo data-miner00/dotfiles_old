@@ -28,7 +28,8 @@ Variables used for configuring my PowerShell profile.
             "fastfetch",
             "windirstat",
             "zig",
-            "bun" # requires "vcredist2022"
+            "bun", # requires "vcredist2022"
+            "uv"
         )
     }
 }

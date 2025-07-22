@@ -44,6 +44,7 @@ Import-Module -Name $PSModuleFolder\Set-PreviousLocation.psm1
 Import-Module -Name $PSModuleFolder\keybinds.psm1
 Import-Module -Name $PSModuleFolder\Get-HistoryWithTimestamp.psm1
 Import-Module -Name $PSModuleFolder\aliases.psm1
+Import-Module -Name $PSModuleFolder\Show-LoremIpsum.psm1
 
 Set-Alias -Name ln -Value New-Symlink
 Set-Alias -Name np -Value notepad.exe
@@ -64,6 +65,8 @@ Set-Alias -Name touch -Value New-Item
 Set-Alias -Name lower -Value Convert-ToLowerCase
 Set-Alias -Name upper -Value Convert-ToUpperCase
 Set-Alias -Name title -Value Convert-ToTitleCase
+Set-Alias -Name lorem -Value Show-LoremIpsum
+Set-Alias -Name ipsum -Value Show-LoremIpsum
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.
