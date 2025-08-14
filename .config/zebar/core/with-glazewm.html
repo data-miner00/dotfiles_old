@@ -145,12 +145,15 @@
         return (
           <div className="app">
             <div className="left">
-              <i
-                className="logo nf nf-fa-windows"
-                title={getOperatingSystemName()}
-              ></i>
               {output.glazewm && (
                 <>
+                  <i
+                    className="logo nf nf-fa-windows"
+                    title={getOperatingSystemName()}
+                    onClick={() =>
+                      output.glazewm.runCommand("shell-exec notepad.exe")
+                    }
+                  ></i>
                   <div className="workspaces">
                     {output.glazewm.currentWorkspaces.map((workspace) => (
                       <button
