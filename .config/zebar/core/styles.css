@@ -100,7 +100,8 @@ body,
 .network,
 .memory,
 .cpu,
-.battery {
+.battery,
+.keyboard {
   margin-right: 20px;
 }
 

@@ -37,6 +37,7 @@
         memory: { type: "memory" },
         weather: { type: "weather" },
         host: { type: "host" },
+        keyboard: { type: "keyboard", refreshInterval: 1000 },
       });
 
       createRoot(document.getElementById("root")).render(<App />);
@@ -225,6 +226,13 @@
                     ></button>
                   )}
                 </>
+              )}
+
+              {output.keyboard && (
+                <div className="keyboard">
+                  <i className="nf nf-md-keyboard"></i>
+                  {output.keyboard.layout}
+                </div>
               )}
 
               {output.network && (
