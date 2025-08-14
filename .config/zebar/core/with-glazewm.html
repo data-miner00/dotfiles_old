@@ -36,6 +36,7 @@
         battery: { type: "battery" },
         memory: { type: "memory" },
         weather: { type: "weather" },
+        host: { type: "host" },
       });
 
       createRoot(document.getElementById("root")).render(<App />);
@@ -134,10 +135,19 @@
           );
         }
 
+        function getOperatingSystemName() {
+          if (!output.host) return "Unknown OS";
+
+          return output.host.osName + " " + output.host.osVersion;
+        }
+
         return (
           <div className="app">
             <div className="left">
-              <i className="logo nf nf-fa-windows"></i>
+              <i
+                className="logo nf nf-fa-windows"
+                title={getOperatingSystemName()}
+              ></i>
               {output.glazewm && (
                 <>
                   <div className="workspaces">
