@@ -169,7 +169,15 @@
             </div>
 
             <div className="center">
-              <i className="nf nf-md-clock_time_eight"></i>
+              {output.weather ? (
+                output.weather.isDaytime ? (
+                  <i className="nf nf-md-weather_sunny"></i>
+                ) : (
+                  <i className="nf nf-md-weather_night"></i>
+                )
+              ) : (
+                <i className="nf nf-md-clock_time_eight"></i>
+              )}
               {output.date?.formatted ? (
                 <span>{output.date.formatted}</span>
               ) : (
