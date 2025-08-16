@@ -19,3 +19,4 @@
 |.config/fastfetch/config.jsonc|~/.config/fastfetch/config.jsonc|symlink|
 |.config/obsidian/.obsidian.vimrc|~/.obsidian.vimrc|symlink|
 |.config/jupyter/custom/custom.css|~/.jupyter/custom/custom.css|symlink|
+#|.gitconfig|~/.gitconfig|copy|
