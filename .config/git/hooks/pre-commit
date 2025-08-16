@@ -1,0 +1,12 @@
+#!/bin/sh
+
+Write-Host "Running pre-commit hook..."
+
+if [ -f .git/hooks/pre-commit ]; then
+    if ! .git/hooks/pre-commit "$@"; then
+        echo "Pre-commit hook failed. Please fix the issues before committing."
+        exit 1
+    fi
+fi
+
+exit 0
