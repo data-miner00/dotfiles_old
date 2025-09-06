@@ -29,7 +29,8 @@ Variables used for configuring my PowerShell profile.
             "windirstat",
             "zig",
             "bun", # requires "vcredist2022"
-            "uv"
+            "uv",
+            "sbcl"
         )
     }
 }

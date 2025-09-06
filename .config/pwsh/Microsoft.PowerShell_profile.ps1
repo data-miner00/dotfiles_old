@@ -115,6 +115,12 @@ function now {
     Get-Date (Get-Date).ToUniversalTime() -UFormat '+%Y-%m-%dT%H:%M:%S.000Z'
 }
 
+function quote {
+    $quote = (Invoke-RestMethod -Uri 'https://uselessfacts.jsph.pl/api/v2/facts/random' ).text
+    Write-Host $quote
+    (New-Object -com SAPI.SpVoice).speak($quote) > $null
+}
+
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
 $ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
 
