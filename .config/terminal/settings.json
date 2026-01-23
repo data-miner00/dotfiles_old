@@ -116,42 +116,6 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{9f447865-c05c-5abb-817e-6d3832d59967}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{45c85868-ad16-5b7f-a6de-f3129a234268}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{ce345553-5d99-50a7-a8dc-85662dfdda33}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{7e85ea70-774e-5266-9151-9512d013c242}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{df5a623c-1421-5300-bb70-cdbcb51cea25}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2019 (2)",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{c9a1dbab-494f-5a69-a610-2f7e32044b30}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2019 (2)",
-                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
