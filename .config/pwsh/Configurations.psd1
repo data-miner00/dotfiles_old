@@ -30,7 +30,10 @@ Variables used for configuring my PowerShell profile.
             "zig",
             "bun", # requires "vcredist2022"
             "uv",
-            "sbcl"
+            "sbcl",
+            "dhall",
+            "7zip",
+            "cloc"
         )
     }
 }
