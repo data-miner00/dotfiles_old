@@ -124,6 +124,31 @@ function quote {
     (New-Object -com SAPI.SpVoice).speak($quote) > $null
 }
 
+if (Get-Command az -ErrorAction SilentlyContinue) {
+    # Az CLI autocomplete
+    # Reference: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest&pivots=msi#enable-tab-completion-in-powershell
+    Register-ArgumentCompleter -Native -CommandName az -ScriptBlock {
+        param($commandName, $wordToComplete, $cursorPosition)
+        $completion_file = New-TemporaryFile
+        $env:ARGCOMPLETE_USE_TEMPFILES = 1
+        $env:_ARGCOMPLETE_STDOUT_FILENAME = $completion_file
+        $env:COMP_LINE = $wordToComplete
+        $env:COMP_POINT = $cursorPosition
+        $env:_ARGCOMPLETE = 1
+        $env:_ARGCOMPLETE_SUPPRESS_SPACE = 0
+        $env:_ARGCOMPLETE_IFS = "`n"
+        $env:_ARGCOMPLETE_SHELL = 'powershell'
+        az 2>&1 | Out-Null
+        Get-Content $completion_file | Sort-Object | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, "ParameterValue", $_)
+        }
+        Remove-Item $completion_file, Env:\_ARGCOMPLETE_STDOUT_FILENAME, Env:\ARGCOMPLETE_USE_TEMPFILES, Env:\COMP_LINE, Env:\COMP_POINT, Env:\_ARGCOMPLETE, Env:\_ARGCOMPLETE_SUPPRESS_SPACE, Env:\_ARGCOMPLETE_IFS, Env:\_ARGCOMPLETE_SHELL
+    }
+}
+
+# Press Tab will show all list of possible commands
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
 $ENV:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
 $ENV:STARSHIP_CACHE = "$HOME/AppData/Local/Temp" # logging
 
