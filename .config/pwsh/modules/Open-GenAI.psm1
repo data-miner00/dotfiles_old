@@ -20,7 +20,7 @@
 function Open-GenAI {
     param (
         [Parameter(Mandatory = $false)]
-        [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek", "perplexity", "grok", "duck", "kimi", "qwen", "mistral")]
+        [ValidateSet("chatgpt", "gemini", "claude", "copilot", "deepseek", "perplexity", "grok", "duck", "kimi", "qwen", "mistral", "bolt", "openrouter")]
         [string]$provider = "chatgpt",
 
         [Parameter(Mandatory = $false)]
@@ -40,6 +40,8 @@ function Open-GenAI {
         "kimi"       = "https://kimi.moonshot.cn"
         "qwen"       = "https://chat.qwen.ai/"
         "mistral"    = "https://chat.mistral.ai/chat"
+        "bolt"       = "https://bolt.new/"
+        "openrouter" = "https://openrouter.ai/chat"
     }
 
     if ($random) {
