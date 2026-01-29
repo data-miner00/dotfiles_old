@@ -70,6 +70,7 @@ Set-Alias -Name lorem -Value Show-LoremIpsum
 Set-Alias -Name ipsum -Value Show-LoremIpsum
 Set-Alias -Name tps -Value Get-TopProcesses
 Set-Alias -Name tfs -Value Get-TopFiles
+Set-Alias -Name localhost -Value Open-Localhost
 
 function reason {
     Write-Host The Solar Council has neutralised your intent to break the rules.

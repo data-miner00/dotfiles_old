@@ -151,6 +151,21 @@ function Convert-ToTitleCase {
     }) -join ' '
 }
 
+function Open-Localhost {
+    Param(
+        [Parameter(Mandatory = $false, HelpMessage = "The port number to open.")]
+        [int16]$Port = 3000,
+
+        [Parameter(Mandatory = $false, HelpMessage = "HTTP or HTTPS scheme.")]
+        [Alias("s")]
+        [bool]$Https = $false
+    )
+
+    $scheme = if ($Https) { "https" } else { "http" }
+    $url = "${scheme}://localhost:$Port"
+    Start-Process $url
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
@@ -166,4 +181,5 @@ Export-ModuleMember -Function New-File
 Export-ModuleMember -Function Convert-ToLowerCase
 Export-ModuleMember -Function Convert-ToUpperCase
 Export-ModuleMember -Function Convert-ToTitleCase
+Export-ModuleMember -Function Open-Localhost
 
