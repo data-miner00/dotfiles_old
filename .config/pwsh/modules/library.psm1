@@ -166,6 +166,17 @@ function Open-Localhost {
     Start-Process $url
 }
 
+function Clear-Prompt {
+    function global:prompt { "PS> " }
+    # function prompt {"PS: $(get-date)>"}
+}
+
+function Reset-Prompt {
+    function global:prompt {
+        "PS $($executionContext.SessionState.Path.CurrentLocation)> "
+    }
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
@@ -182,4 +193,6 @@ Export-ModuleMember -Function Convert-ToLowerCase
 Export-ModuleMember -Function Convert-ToUpperCase
 Export-ModuleMember -Function Convert-ToTitleCase
 Export-ModuleMember -Function Open-Localhost
+Export-ModuleMember -Function Clear-Prompt
+Export-ModuleMember -Function Reset-Prompt
 
