@@ -177,6 +177,10 @@ function Reset-Prompt {
     }
 }
 
+function Get-FirstCommitDate {
+    git log --reverse --format="format:%ai" --all | Select-Object -First 1
+}
+
 Export-ModuleMember -Function Write-Hello
 Export-ModuleMember -Function Switch-Location
 Export-ModuleMember -Function Switch-PreviousLocation
@@ -195,4 +199,5 @@ Export-ModuleMember -Function Convert-ToTitleCase
 Export-ModuleMember -Function Open-Localhost
 Export-ModuleMember -Function Clear-Prompt
 Export-ModuleMember -Function Reset-Prompt
+Export-ModuleMember -Function Get-FirstCommitDate
 
