@@ -38,3 +38,25 @@ else
     echo No
 fi
 
+# Notes
+
+function trace() {
+    strace -e execve whoami
+    ldd shell.sh
+}
+
+if [ $USER == "devops" ]; then
+    echo "Welcome, DevOps Engineer!"
+else
+    echo "Access denied."
+fi
+
+for i in {1..5}; do
+    echo "Number $i"
+done
+
+count=1
+while [ $count -le 5 ]; do
+    echo "Count $count"
+    ((count++))
+done
