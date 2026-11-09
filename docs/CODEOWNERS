@@ -1,0 +1,41 @@
+# CODEOWNERS
+#
+# Each line is a file pattern followed by one or more owners (GitHub users,
+# @org/team names, or emails). When a pull request touches a matching file,
+# its owners are automatically requested for review.
+#
+# Order matters: the LAST matching pattern takes precedence.
+# Docs: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+*                               @data-miner00
+
+# ---------------------------------------------------------------------------
+# Area-specific owners. Currently all the same person; split these out if
+# other maintainers take over parts of the config.
+# ---------------------------------------------------------------------------
+
+# Shell / PowerShell environment
+/.config/pwsh/                  @data-miner00
+/bin/                           @data-miner00
+
+# Editors
+/.config/nvim/                  @data-miner00
+/.config/emacs/                 @data-miner00
+/.emacs.local/                  @data-miner00
+/.config/vscode/                @data-miner00
+/.vimrc                         @data-miner00
+
+# Window manager, bar, and terminal
+/.config/glazewm/               @data-miner00
+/.config/zebar/                 @data-miner00
+/.config/wezterm/               @data-miner00
+/.config/terminal/              @data-miner00
+/.config/ahk/                   @data-miner00
+
+# Documentation
+/docs/                          @data-miner00
+*.md                            @data-miner00
+
+# Protect this file
+/docs/CODEOWNERS                @data-miner00
