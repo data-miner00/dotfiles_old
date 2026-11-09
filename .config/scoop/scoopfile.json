@@ -1,0 +1,152 @@
+﻿{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1757723685000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, 13 September, 2025 8:34:45 AM"
+            },
+            "Manifests": 1402
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1757723727000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, 13 September, 2025 8:35:27 AM"
+            },
+            "Manifests": 2181
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "23.01",
+            "Updated": "\/Date(1710332222986)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "bun",
+            "Version": "1.2.13",
+            "Updated": "\/Date(1747485650069)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cloc",
+            "Version": "2.00",
+            "Updated": "\/Date(1710220499674)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cmake",
+            "Version": "3.30.5",
+            "Updated": "\/Date(1730385655721)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dhall",
+            "Version": "1.42.2",
+            "Updated": "\/Date(1757726247361)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "erlang",
+            "Version": "26.2.3",
+            "Updated": "\/Date(1710332254421)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fastfetch",
+            "Version": "2.28.0",
+            "Updated": "\/Date(1729891057954)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gleam",
+            "Version": "1.0.0",
+            "Updated": "\/Date(1710332256744)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "just",
+            "Version": "1.16.0",
+            "Updated": "\/Date(1701426248501)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "neofetch",
+            "Version": "7.1.0",
+            "Updated": "\/Date(1698506519059)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "neovim",
+            "Version": "0.10.2",
+            "Updated": "\/Date(1728948874840)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "sbcl",
+            "Version": "2.5.7",
+            "Updated": "\/Date(1755961396314)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "starship",
+            "Version": "1.20.1",
+            "Updated": "\/Date(1728058331332)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "stylua",
+            "Version": "0.20.0",
+            "Updated": "\/Date(1728207661316)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "uv",
+            "Version": "0.7.20",
+            "Updated": "\/Date(1752313132775)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "wezterm",
+            "Version": "20240203-110809-5046fc22",
+            "Updated": "\/Date(1729074394295)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "windirstat",
+            "Version": "2.2.2",
+            "Updated": "\/Date(1740051783319)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "zig",
+            "Version": "0.13.0",
+            "Updated": "\/Date(1740928560390)\/"
+        }
+    ]
+}
