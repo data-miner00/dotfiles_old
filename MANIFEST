@@ -21,3 +21,4 @@
 |.config/jupyter/custom/custom.css|~/.jupyter/custom/custom.css|symlink|
 #|.gitconfig|~/.gitconfig.sample|copy|
 |.config/git|~/.git|symlink|
+|.ideavimrc|~/.ideavimrc|symlink|

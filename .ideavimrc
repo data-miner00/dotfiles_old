@@ -1,0 +1,59 @@
+let mapleader = " "
+
+inoremap jj <esc>
+nnoremap Y y$
+
+" Center when jumping n/N
+nnoremap n nzz
+nnoremap N Nzz
+
+" Line wrap movements
+nnoremap k gk
+nnoremap j gj
+
+" Tab indenting
+nnoremap <tab> >>
+nnoremap <s-tab> <<
+xnoremap <tab> >gv
+xnoremap <s-tab> <gv
+
+" Highlight all
+nnoremap <leader>a ggVG
+
+" Clipboard
+noremap <leader>p "+p
+noremap <leader>y "+y
+
+" Window movement
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+
+" Quit, write, cut
+nnoremap <leader>w :w!<cr>
+nnoremap <leader>qq :q!<cr>
+nnoremap <leader>x :x!<cr>
+
+" Line edge
+nnoremap H ^
+nnoremap L g_
+
+" IdeaVim-only settings
+set ideajoin
+set idearefactormode=keep
+
+" Editor
+nmap K <Action>(QuickJavaDoc)
+nmap gd <Action>(GotoDeclaration)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+
+" Use IDE actions
+nmap gr <Action>(FindUsages)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>f <Action>(ReformatCode)
+
