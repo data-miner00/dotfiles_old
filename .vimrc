@@ -12,9 +12,6 @@ nnoremap N Nzz
 nnoremap k gk
 nnoremap j gj
 
-" Add empty line
-nnoremap # o<ESC>k
-
 " Tab indenting
 nnoremap <tab> >>
 nnoremap <s-tab> <<
